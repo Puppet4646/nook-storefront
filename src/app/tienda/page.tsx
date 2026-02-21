@@ -74,13 +74,29 @@ export default async function TiendaPage({
                 </p>
             </section>
 
-            {/* Filter / Sort Bar */}
+            {/* Layout Principal: Sidebar Izquierdo + Grilla de Productos Derecha */}
             <section className="px-6 mb-12 max-w-7xl mx-auto">
-                <CategoryFilter categories={categories} />
-            </section>
+                <div className="flex flex-col md:flex-row gap-8 items-start">
 
-            {/* Dynamic Product Grid */}
-            <ProductGrid products={products} />
+                    {/* Sidebar Categorías (25% ancho en Desktop) */}
+                    <aside className="w-full md:w-1/4 flex-shrink-0 sticky top-24">
+                        <CategoryFilter categories={categories} />
+                    </aside>
+
+                    {/* Grilla de Resultados (75% ancho en Desktop) */}
+                    <div className="w-full md:w-3/4">
+                        {products.length > 0 ? (
+                            <ProductGrid products={products} />
+                        ) : (
+                            <div className="w-full h-64 flex flex-col items-center justify-center bg-zen-light/30 border border-zen-sage/20 rounded-md">
+                                <p className="text-zen-sage font-serif text-xl">No hay productos en esta categoría aún.</p>
+                                <p className="text-sm font-sans text-zen-dark/60 mt-2">Prueba seleccionando otra familia de productos.</p>
+                            </div>
+                        )}
+                    </div>
+
+                </div>
+            </section>
 
         </main>
     );
