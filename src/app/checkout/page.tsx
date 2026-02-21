@@ -3,6 +3,7 @@
 import { useCartStore } from "@/store/cart";
 import Link from "next/link";
 import { useState } from "react";
+import ProductImage from "@/components/ProductImage";
 
 export default function CheckoutPage() {
     const { items, cartTotal, clearCart } = useCartStore();
@@ -160,12 +161,13 @@ export default function CheckoutPage() {
                         <div className="space-y-6 mb-8 max-h-[400px] overflow-y-auto pr-2">
                             {items.map((item) => (
                                 <div key={item.id} className="flex gap-4 items-center">
-                                    <div className="w-16 h-20 bg-zen-sage/10 rounded overflow-hidden flex-shrink-0">
-                                        {item.image ? (
-                                            <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
-                                        ) : (
-                                            <div className="w-full h-full bg-zen-sage/30"></div>
-                                        )}
+                                    <div className="w-16 h-20 relative bg-zen-sage/10 rounded overflow-hidden flex-shrink-0">
+                                        <ProductImage
+                                            src={item.image}
+                                            alt={item.name}
+                                            fill
+                                            className="rounded"
+                                        />
                                     </div>
                                     <div className="flex-1">
                                         <h3 className="font-serif text-md text-zen-dark leading-tight">{item.name}</h3>

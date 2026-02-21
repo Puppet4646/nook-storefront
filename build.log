@@ -1,0 +1,42 @@
+
+> nook-storefront@0.1.0 build
+> next build
+
+⚠ `eslint` configuration in next.config.ts is no longer supported. See more info here: https://nextjs.org/docs/app/api-reference/cli/next#next-lint-options
+⚠ Invalid next.config.ts options detected: 
+⚠     Unrecognized key(s) in object: 'eslint'
+⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\nook-storefront\package-lock.json
+
+▲ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local, .env.production
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 2.6s
+  Running TypeScript ...
+  Collecting page data using 15 workers ...
+  Generating static pages using 15 workers (0/7) ...
+  Generating static pages using 15 workers (1/7) 
+  Generating static pages using 15 workers (3/7) 
+  Generating static pages using 15 workers (5/7) 
+(node:23676) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+⨯ useSearchParams() should be wrapped in a suspense boundary at page "/tienda". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at Q (C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\nook-storefront\.next\server\chunks\ssr\nook-storefront_4b162ce7._.js:2:2111)
+    at o (C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\nook-storefront\.next\server\chunks\ssr\nook-storefront_4b162ce7._.js:4:5283)
+    at e (C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\nook-storefront\.next\server\chunks\ssr\nook-storefront_4b162ce7._.js:4:6525)
+    at an (C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\nook-storefront\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:84360)
+    at ai (C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\nook-storefront\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:86179)
+    at ai (C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\nook-storefront\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:104708)
+    at al (C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\nook-storefront\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:107953)
+    at as (C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\nook-storefront\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:105368)
+    at am (C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\nook-storefront\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:112882)
+    at ai (C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\nook-storefront\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:98808)
+Error occurred prerendering page "/tienda". Read more: https://nextjs.org/docs/messages/prerender-error
+Export encountered an error on /tienda/page: /tienda, exiting the build.
+⨯ Next.js build worker exited with code: 1 and signal: null

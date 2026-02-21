@@ -1,6 +1,9 @@
-import { fetchProductBySlug } from "@/lib/woo";
+import { fetchProductBySlug, fetchProducts } from "@/lib/woo";
 import { notFound } from "next/navigation";
 import AddToCartButton from "@/components/AddToCartButton";
+import ProductGallery from "@/components/ProductGallery";
+import ProductAccordion from "@/components/ProductAccordion";
+import ProductGrid from "@/components/ProductGrid";
 
 export const revalidate = 60;
 
@@ -12,6 +15,18 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
     }
 
     const product = products[0];
+
+    // Fetch related products (same category)
+    let relatedProducts: any[] = [];
+    if (product.categories && product.categories.length > 0) {
+        const categoryId = product.categories[0].id;
+        const allCategoryProducts = await fetchProducts(categoryId);
+        // Exclude the current product and limit to 4
+        relatedProducts = allCategoryProducts
+            .filter((p: any) => p.id !== product.id)
+            .slice(0, 4);
+    }
+
     const imageUrl = product.images.length > 0
         ? product.images[0].src
         : "https://images.unsplash.com/photo-1579761763131-dae193fb69ee?q=80&w=800&auto=format&fit=crop";
@@ -23,66 +38,70 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
         : "Una experiencia vibrante y premium para acompañar cada momento de tu día.";
 
     return (
-        <main className="relative bg-zen-bone min-h-screen lg:flex lg:flex-row-reverse pb-16 lg:pb-0">
+        <>
+            <main className="relative bg-zen-bone min-h-screen lg:flex lg:flex-row-reverse pb-16 lg:pb-0">
 
-            {/* Right Side: Product Details */}
-            <div className="relative lg:w-1/2 px-8 pt-32 lg:pt-40 lg:px-16 xl:px-24 flex flex-col min-h-[50vh] lg:min-h-screen">
+                {/* Right Side: Product Details */}
+                <div className="relative lg:w-1/2 px-8 pt-32 lg:pt-40 lg:px-16 xl:px-24 flex flex-col min-h-[50vh] lg:min-h-screen">
 
-                {/* Title & Price */}
-                <div className="mb-10 text-left lg:mt-8">
-                    <h1 className="font-serif text-4xl lg:text-5xl mb-4 leading-tight text-zen-dark">
-                        {product.name}
-                    </h1>
-                    <div className="text-zen-sage font-sans font-medium text-xl tracking-wide">
-                        €{product.price || '0.00'}
+                    {/* Title & Price */}
+                    <div className="mb-10 text-left lg:mt-8">
+                        <h1 className="font-serif text-4xl lg:text-5xl mb-4 leading-tight text-zen-dark">
+                            {product.name}
+                        </h1>
+                        <div className="text-zen-sage font-sans font-medium text-xl tracking-wide" dangerouslySetInnerHTML={{ __html: product.price_html || `€${product.price}` }} />
                     </div>
-                </div>
 
-                {/* Poetic Description */}
-                <div className="mb-12 max-w-lg">
-                    <p className="font-sans font-light leading-relaxed text-zen-dark/80 text-sm italic">
-                        {cleanDescription}
-                    </p>
-                </div>
-
-                {/* CTA Button */}
-                <div className="mb-16">
-                    <AddToCartButton product={product} />
-                </div>
-
-                {/* Accordions (Minimalist UX Concept) */}
-                <div className="space-y-0 border-t border-zen-sage/20">
-                    {/* Accordion Item 1 */}
-                    <div className="border-b border-zen-sage/20 py-6">
-                        <button className="flex w-full items-center justify-between group">
-                            <span className="font-sans text-xs font-semibold tracking-[0.15em] uppercase text-zen-dark/80">Descripción Completa</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-zen-sage group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                            </svg>
-                        </button>
+                    {/* Poetic Description */}
+                    <div className="mb-12 max-w-lg">
+                        <p className="font-sans font-light leading-relaxed text-zen-dark/80 text-sm italic">
+                            {cleanDescription}
+                        </p>
                     </div>
-                    {/* Accordion Item 2 */}
-                    <div className="border-b border-zen-sage/20 py-6">
-                        <button className="flex w-full items-center justify-between group">
-                            <span className="font-sans text-xs font-semibold tracking-[0.15em] uppercase text-zen-dark/80">Envío y Devoluciones</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-zen-sage group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                            </svg>
-                        </button>
+
+                    {/* CTA Button */}
+                    <div className="mb-16">
+                        <AddToCartButton product={product} />
                     </div>
+
+                    {/* Dynamic Accordions */}
+                    <div className="space-y-0 border-t border-zen-sage/20 mb-12">
+                        <ProductAccordion
+                            title="Descripción Completa"
+                            content={product.description
+                                ? <div dangerouslySetInnerHTML={{ __html: product.description.replace(/style="[^"]*"/g, "") }} className="prose prose-sm prose-zen" />
+                                : "Este producto de especialidad ha sido cuidadosamente seleccionado basándonos en sus perfiles de taza excepcionales y prácticas de cultivo éticas."}
+                        />
+                        <ProductAccordion
+                            title="Elaboración y Cuidado"
+                            content="Para preservar la delicadeza de nuestras hojas y granos, almacénalos en un lugar fresco y alejado de la luz solar directa. Consulta nuestra guía de infusión en la tarjeta adjunta a tu pedido."
+                        />
+                        <ProductAccordion
+                            title="Envío y Devoluciones"
+                            content="Procesamos pedidos en 24-48 horas. Envío estándar en península (2-3 días). Aceptamos devoluciones de productos sin abrir hasta 14 días después de la entrega."
+                        />
+                    </div>
+
                 </div>
 
-            </div>
+                {/* Left Side: Dynamic Gallery */}
+                <div className="w-full lg:w-1/2 -order-1 lg:order-none z-10">
+                    <ProductGallery images={product.images} />
+                </div>
 
-            {/* Left Side: Hero Sticky Image */}
-            <div className="w-full lg:w-1/2 h-[50vh] lg:h-screen lg:sticky lg:top-0 -order-1 lg:order-none">
-                <img
-                    src={imageUrl}
-                    alt={product.name}
-                    className="w-full h-full object-cover"
-                />
-            </div>
+            </main>
 
-        </main>
+            {/* Productos Relacionados */}
+            {
+                relatedProducts.length > 0 && (
+                    <section className="bg-white py-24 border-t border-zen-sage/10">
+                        <div className="max-w-7xl mx-auto px-6">
+                            <h2 className="font-serif text-3xl text-zen-dark mb-12 text-center">También podría interesarte</h2>
+                            <ProductGrid products={relatedProducts} />
+                        </div>
+                    </section>
+                )
+            }
+        </>
     );
 }

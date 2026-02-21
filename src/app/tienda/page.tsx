@@ -1,19 +1,66 @@
-import { fetchProducts } from "@/lib/woo";
+import { fetchProducts, fetchCategories } from "@/lib/woo";
 import ProductGrid from "@/components/ProductGrid";
+import CategoryFilter from "@/components/CategoryFilter";
 
 export const revalidate = 60; // Revalidate cache every 60 seconds
 
-export default async function TiendaPage() {
-    // Fetch products from WooCommerce REST API
-    // We fetch up to 24 products for the initial grid
-    let products: { id: number; name: string; price: string; images: { id: number; src: string; alt: string }[]; permalink: string; slug: string; }[] = [];
+export default async function TiendaPage({
+    searchParams,
+}: {
+    searchParams: { [key: string]: string | string[] | undefined };
+}) {
+    // 1. Extraer los parámetros de la URL
+    const categorySlug = typeof searchParams.categoria === 'string' && searchParams.categoria !== 'todas'
+        ? searchParams.categoria
+        : null;
+
+    // El orden es manejado visualmente a través del componente cliente 
+    // y aplicaremos la ordenación JS básica antes de pasar al renderizado.
+    const sortParam = typeof searchParams.orden === 'string' ? searchParams.orden : 'default';
+
+    let products: { id: number; name: string; price: string; date_created?: string; images: { id: number; src: string; alt: string }[]; permalink: string; slug: string; }[] = [];
+    let categories: any[] = [];
+
+    // 2. Fetch de datos en paralelo (Categorías y Listado Global)
     try {
-        const response = await fetchProducts();
-        if (response) {
-            products = response;
+        const [productsRes, categoriesRes] = await Promise.all([
+            fetchProducts(),
+            fetchCategories()
+        ]);
+
+        // Filtramos categorías vacías y la 'uncategorized'
+        categories = categoriesRes.filter((c: any) => c.slug !== 'uncategorized' && c.count > 0);
+        let baseProducts = productsRes || [];
+
+        // 3. Filtrar por Categoría manualmente (ya que la API a veces es lenta)
+        if (categorySlug) {
+            // Buscamos el ID de la categoría pedida en la URL
+            const requestedCat = categories.find((c: any) => c.slug === categorySlug);
+            if (requestedCat) {
+                // Filtramos el array base buscando si el producto tiene esa categoría
+                baseProducts = baseProducts.filter((p: any) =>
+                    p.categories && p.categories.some((cat: any) => cat.id === requestedCat.id)
+                );
+            }
         }
+
+        // 4. Ordenación basada en el sort param
+        if (sortParam === 'price_asc') {
+            baseProducts.sort((a: any, b: any) => parseFloat(a.price || '0') - parseFloat(b.price || '0'));
+        } else if (sortParam === 'price_desc') {
+            baseProducts.sort((a: any, b: any) => parseFloat(b.price || '0') - parseFloat(a.price || '0'));
+        } else if (sortParam === 'newest') {
+            baseProducts.sort((a: any, b: any) => {
+                const dateA = a.date_created ? new Date(a.date_created).getTime() : 0;
+                const dateB = b.date_created ? new Date(b.date_created).getTime() : 0;
+                return dateB - dateA;
+            });
+        }
+
+        products = baseProducts;
+
     } catch (error) {
-        console.error("Error fetching products:", error);
+        console.error("Error fetching data for Tienda:", error);
     }
 
     return (
@@ -27,13 +74,9 @@ export default async function TiendaPage() {
                 </p>
             </section>
 
-            {/* Filter / Sort Bar (Visual Placeholder for Zen Look) */}
+            {/* Filter / Sort Bar */}
             <section className="px-6 mb-12 max-w-7xl mx-auto">
-                <div className="flex items-center justify-center border-b border-zen-sage/30 pb-4">
-                    <div className="flex gap-8 overflow-x-auto">
-                        <button className="text-xs uppercase tracking-widest font-semibold text-zen-dark border-b border-zen-dark pb-4 -mb-[17px]">Catálogo Completo</button>
-                    </div>
-                </div>
+                <CategoryFilter categories={categories} />
             </section>
 
             {/* Dynamic Product Grid */}
