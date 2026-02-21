@@ -2,6 +2,7 @@ import { fetchProducts, fetchCategories } from '@/lib/woo';
 import Hero from '@/components/Hero';
 import FeaturedCategories from '@/components/FeaturedCategories';
 import Storytelling from '@/components/Storytelling';
+import ProductImage from '@/components/ProductImage';
 
 export default async function Home() {
   // Fetch data natively on the server before sending to client
@@ -31,11 +32,16 @@ export default async function Home() {
           <h2 className="text-2xl mb-4 text-[#8C9A7B]">Latest Live Products ({products.length})</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {products.map((p: { id: number, name: string, price_html: string, images?: { src: string }[] }) => (
-              <div key={p.id} className="bg-white p-6 shadow-sm">
-                {p.images?.[0] && (
-                  <img src={p.images[0].src} alt={p.name} className="w-full h-48 object-cover mb-4" />
-                )}
-                <h3 className="font-serif text-lg mb-2">{p.name}</h3>
+              <div key={p.id} className="bg-white p-6 shadow-sm flex flex-col">
+                <div className="relative w-full h-64 mb-6">
+                  <ProductImage
+                    src={p.images?.[0] ? p.images[0].src : null}
+                    alt={p.name}
+                    fill
+                    className="rounded-sm"
+                  />
+                </div>
+                <h3 className="font-serif text-lg mb-2 line-clamp-2 min-h-[56px]">{p.name}</h3>
                 <div className="text-sm text-gray-500 mb-2" dangerouslySetInnerHTML={{ __html: p.price_html }} />
               </div>
             ))}

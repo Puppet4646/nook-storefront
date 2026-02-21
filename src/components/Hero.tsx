@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Hero() {
     return (
         <section className="relative min-h-[80vh] px-6 pt-16 pb-12 flex flex-col md:flex-row items-center max-w-7xl mx-auto">
@@ -27,10 +29,13 @@ export default function Hero() {
                 {/* Right Side: Vertical Featured Image (Offset) */}
                 <div className="col-span-1 md:col-span-6 lg:col-span-7 flex justify-center md:justify-end mt-12 md:mt-0">
                     <div className="relative w-full max-w-md md:max-w-lg aspect-[3/4] rounded-sm overflow-hidden shadow-2xl border-[8px] border-white">
-                        <img
+                        <Image
                             alt="Premium tea ritual"
-                            className="w-full h-full object-cover"
+                            className="object-cover"
                             src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=1000&auto=format&fit=crop"
+                            fill
+                            priority
+                            sizes="(max-width: 768px) 100vw, 50vw"
                         />
                         {/* Small caption/badge over image */}
                         <div className="absolute bottom-4 left-4 right-4 bg-white/20 backdrop-blur-md p-4 border border-white/30 hidden sm:block">

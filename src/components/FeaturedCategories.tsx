@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function FeaturedCategories() {
     return (
         <section className="bg-zen-bone w-full px-6 py-24 md:py-32">
@@ -21,10 +23,12 @@ export default function FeaturedCategories() {
 
                     {/* Category Card 1: Té Matcha */}
                     <div className="group relative overflow-hidden rounded-sm bg-white shadow-sm transition-all duration-500 hover:shadow-xl aspect-[3/4]">
-                        <img
+                        <Image
                             alt="Premium Japanese Matcha Tea Powder"
-                            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
                             src="https://images.unsplash.com/photo-1579761763131-dae193fb69ee?q=80&w=800&auto=format&fit=crop"
+                            fill
+                            sizes="(max-width: 768px) 100vw, 33vw"
                         />
                         {/* Gradient Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -41,10 +45,12 @@ export default function FeaturedCategories() {
 
                     {/* Category Card 2: Té Negro */}
                     <div className="group relative overflow-hidden rounded-sm bg-white shadow-sm transition-all duration-500 hover:shadow-xl aspect-[3/4]">
-                        <img
+                        <Image
                             alt="Artisanal Black Tea Leaves"
-                            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
                             src="https://images.unsplash.com/photo-1563822249548-9a72b6353cd1?q=80&w=800&auto=format&fit=crop"
+                            fill
+                            sizes="(max-width: 768px) 100vw, 33vw"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
@@ -59,10 +65,12 @@ export default function FeaturedCategories() {
 
                     {/* Category Card 3: Café de Especialidad */}
                     <div className="group relative overflow-hidden rounded-sm bg-white shadow-sm transition-all duration-500 hover:shadow-xl aspect-[3/4]">
-                        <img
+                        <Image
                             alt="Roasted Specialty Coffee Beans"
-                            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
                             src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?q=80&w=800&auto=format&fit=crop"
+                            fill
+                            sizes="(max-width: 768px) 100vw, 33vw"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
