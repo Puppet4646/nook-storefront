@@ -33,7 +33,7 @@ export default async function BlogPage() {
                                 const title = post.title.rendered.toLowerCase();
                                 if (title.includes("matcha")) imageUrl = "https://images.unsplash.com/photo-1582793988951-9aed5509eb97?auto=format&fit=crop&q=80&w=800";
                                 else if (title.includes("temperatura") || title.includes("preparación")) imageUrl = "https://images.unsplash.com/photo-1571934811356-fb8233f20b4a?auto=format&fit=crop&q=80&w=800";
-                                else if (title.includes("terroir") || title.includes("origen")) imageUrl = "https://images.unsplash.com/photo-1501333190703-49ef2adb8b7d?auto=format&fit=crop&q=80&w=800";
+                                else if (title.includes("terroir") || title.includes("origen")) imageUrl = "https://images.unsplash.com/photo-1596439924229-23136209efcc?auto=format&fit=crop&q=80&w=800";
                                 else imageUrl = "https://images.unsplash.com/photo-1544787210-2213d84ad96b?auto=format&fit=crop&q=80&w=800";
                             }
 
