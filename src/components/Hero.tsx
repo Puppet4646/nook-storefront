@@ -2,49 +2,52 @@ import Image from "next/image";
 
 export default function Hero() {
     return (
-        <section className="relative min-h-[80vh] px-6 pt-16 pb-12 flex flex-col md:flex-row items-center max-w-7xl mx-auto">
-            {/* Background Decorative Element */}
-            <div className="absolute top-20 right-0 w-32 h-64 bg-zen-sage/10 rounded-l-full -z-10 hidden md:block"></div>
+        <section className="relative w-full min-h-[85vh] flex items-center justify-center overflow-hidden">
+            {/* Background Image Loading with Next/Image */}
+            <div className="absolute inset-0 z-0">
+                <Image
+                    src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?q=80&w=2000&auto=format&fit=crop"
+                    alt="Ritual del té Zen verde oscuro"
+                    fill
+                    priority
+                    className="object-cover"
+                    sizes="100vw"
+                />
+                {/* Dark/Sage Gradient Overlay for Text Readability */}
+                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-12 flex-1 items-center">
-                {/* Left Side: Typography & CTA (60% width on desktop grid) */}
-                <div className="col-span-1 md:col-span-6 lg:col-span-5 z-10 mt-4 md:mt-0">
-                    <p className="font-sans text-xs font-medium tracking-[0.3em] text-[#4A564B] mb-6 uppercase">
-                        Especialidad en Té y Café
-                    </p>
-                    <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-zen-dark leading-[1.1] mb-8">
-                        El Ritual del <span className="italic">Silencio</span> en cada sorbo
+            {/* Content Container */}
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-center h-full pt-20">
+                <div className="max-w-2xl">
+                    <div className="flex items-center gap-4 mb-6">
+                        <div className="h-[1px] w-12 bg-zen-sage"></div>
+                        <p className="font-sans text-xs md:text-sm font-medium tracking-[0.3em] text-zen-sage-light uppercase">
+                            Nook Specialty
+                        </p>
+                    </div>
+
+                    <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white leading-[1.1] mb-6 drop-shadow-lg">
+                        El Ritual del <br />
+                        <span className="italic text-zen-sage-light font-light">Silencio</span>
                     </h1>
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-8">
-                        <button className="bg-zen-sage hover:bg-zen-sage/90 text-white font-sans text-xs font-bold tracking-widest uppercase px-8 py-5 rounded-sm w-fit transition-all shadow-sm">
-                            Explorar la Esencia
-                        </button>
-                        <div className="flex items-center gap-4 text-[#4A564B]">
-                            <div className="h-[1px] w-12 bg-zen-sage/40"></div>
-                            <span className="text-[10px] italic font-serif">Est. 2024</span>
-                        </div>
-                    </div>
-                </div>
 
-                {/* Right Side: Vertical Featured Image (Offset) */}
-                <div className="col-span-1 md:col-span-6 lg:col-span-7 flex justify-center md:justify-end mt-12 md:mt-0">
-                    <div className="relative w-full max-w-md md:max-w-lg aspect-[3/4] rounded-sm overflow-hidden shadow-2xl border-[8px] border-white">
-                        <Image
-                            alt="Premium tea ritual"
-                            className="object-cover"
-                            src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=1000&auto=format&fit=crop"
-                            fill
-                            priority
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                        />
-                        {/* Small caption/badge over image */}
-                        <div className="absolute bottom-4 left-4 right-4 bg-white/20 backdrop-blur-md p-4 border border-white/30 hidden sm:block">
-                            <p className="text-white text-xs font-sans font-light leading-relaxed drop-shadow-md">
-                                Cosechas seleccionadas de las montañas de Shizuoka para encontrar el Zen diario.
-                            </p>
-                        </div>
+                    <p className="font-sans text-base md:text-lg text-gray-200 mb-10 max-w-lg leading-relaxed font-light">
+                        Cosechas exclusivas de las montañas de Shizuoka y las mesetas de Etiopía. Encuentra tu Zen diario en cada taza.
+                    </p>
+
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-6">
+                        <button className="bg-zen-sage hover:bg-white hover:text-zen-dark text-white font-sans text-xs font-bold tracking-[0.2em] uppercase px-10 py-5 rounded-sm transition-all duration-300 shadow-xl border border-transparent hover:border-zen-sage">
+                            Descubrir la Colección
+                        </button>
                     </div>
                 </div>
+            </div>
+
+            {/* Subtle scroll indicator */}
+            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-70 animate-bounce">
+                <span className="text-white text-[10px] uppercase tracking-widest font-sans">Explorar</span>
+                <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent"></div>
             </div>
         </section>
     );
