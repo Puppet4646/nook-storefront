@@ -23,7 +23,7 @@ export default function Hero() {
                     <div className="flex items-center gap-4 mb-6">
                         <div className="h-[1px] w-12 bg-zen-sage"></div>
                         <p className="font-sans text-xs md:text-sm font-medium tracking-[0.3em] text-zen-sage-light uppercase">
-                            Nook Specialty
+                            Nook
                         </p>
                     </div>
 

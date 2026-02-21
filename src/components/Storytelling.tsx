@@ -24,7 +24,7 @@ export default function Storytelling() {
                 <div className="relative order-1 md:order-2 w-full flex justify-center md:justify-end">
                     <div className="relative aspect-[3/4] w-full max-w-sm lg:max-w-md rounded-sm overflow-hidden shadow-2xl transform md:translate-x-8 md:translate-y-12">
                         <Image
-                            src="https://images.unsplash.com/photo-1599321955726-e048426698dc?q=80&w=1000&auto=format&fit=crop"
+                            src="https://images.unsplash.com/photo-1582793988951-9aed5509eb97?q=80&w=1000&auto=format&fit=crop"
                             alt="Preparación tradicional matcha té ceremonia zen"
                             className="object-cover transition-transform duration-700 hover:scale-105"
                             fill

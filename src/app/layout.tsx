@@ -16,8 +16,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Nook Specialty | Especialidad en Té y Café",
-  description: "El Ritual del Silencio en cada sorbo. Especialidad en Té y Café.",
+  title: "Nook | Coffee & Tea Specialty",
+  description: "La tienda Headless basada en filosofía Zen. Especialidad en Té y Café.",
 };
 
 export default function RootLayout({

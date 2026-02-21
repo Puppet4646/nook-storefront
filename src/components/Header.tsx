@@ -26,7 +26,10 @@ export default function Header() {
                 {/* Logo */}
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                     <Link href="/">
-                        <h1 className="font-serif text-2xl md:text-3xl text-zen-dark tracking-tight">Nook Specialty</h1>
+                        <h1 className="font-serif text-2xl md:text-3xl text-zen-dark tracking-tight flex flex-col items-center justify-center">
+                            Nook
+                            <span className="font-sans text-[9px] uppercase tracking-[0.2em] text-zen-sage/80 mt-1 block">Coffee & Tea Specialty</span>
+                        </h1>
                     </Link>
                 </div>
 

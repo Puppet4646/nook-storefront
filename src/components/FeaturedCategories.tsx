@@ -26,7 +26,7 @@ export default function FeaturedCategories() {
                         <Image
                             alt="Premium Japanese Matcha Tea Powder"
                             className="object-cover transition-transform duration-700 group-hover:scale-105"
-                            src="https://images.unsplash.com/photo-1579761763131-dae193fb69ee?q=80&w=800&auto=format&fit=crop"
+                            src="https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?q=80&w=800&auto=format&fit=crop"
                             fill
                             sizes="(max-width: 768px) 100vw, 33vw"
                         />

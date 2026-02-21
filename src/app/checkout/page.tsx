@@ -72,8 +72,8 @@ export default function CheckoutPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <h1 className="font-serif text-3xl text-zen-dark mb-2 text-center">¡Pedido Confirmado!</h1>
-                <p className="text-zen-sage mb-8 text-center max-w-md font-sans">
-                    Su número de pedido es <strong>#{orderId}</strong>. Hemos recibido su encargo y estamos preparando su experiencia Nook Specialty.
+                <p className="text-[#8C9A7B] mb-8">
+                    Su número de pedido es <strong>#{orderId}</strong>. Hemos recibido su encargo y estamos preparando su experiencia Nook.
                 </p>
                 <Link href="/tienda" className="bg-zen-sage text-white px-8 py-4 rounded-sm tracking-widest text-xs font-bold uppercase hover:bg-zen-dark transition-all shadow-lg">
                     Seguir Explorando

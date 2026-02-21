@@ -62,10 +62,10 @@ export default function ProductImage({
                 strokeLinejoin="round"
                 className="w-12 h-12 mb-2 opacity-50"
             >
-                <path d="M12 2v20M17 5H9.5a3.5 3.5 3.5 0 0 0 0 7h5a3.5 3.5 3.5 0 0 1 0 7H6" />
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                 <path d="M12 12c-3.3 0-6-2.7-6-6V2h12v4c0 3.3-2.7 6-6 6Z" />
             </svg>
-            <span className="font-sans text-xs uppercase tracking-widest opacity-60">Nook Specialty</span>
+            <span className="font-sans text-xs uppercase tracking-widest opacity-60">Nook</span>
         </div>
     );
 }

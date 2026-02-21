@@ -5,7 +5,8 @@ export default function Footer() {
 
                 {/* Brand & Newsletter Column */}
                 <div className="md:col-span-2">
-                    <h2 className="font-serif text-3xl mb-6">Nook Specialty</h2>
+                    <h2 className="font-serif text-3xl font-medium mb-1">Nook</h2>
+                    <p className="font-sans text-[10px] uppercase tracking-[0.2em] text-zen-sage-light mb-6">Coffee & Tea Specialty</p>
                     <p className="font-sans font-light text-zen-bone/80 mb-8 max-w-sm">
                         Suscríbete a nuestra newsletter para recibir notas de cata, invitaciones a talleres online y acceso anticipado a cosechas limitadas.
                     </p>
@@ -47,7 +48,7 @@ export default function Footer() {
 
             {/* Bottom Legal & Copyright Bar */}
             <div className="max-w-7xl mx-auto pt-8 border-t border-zen-sage/30 flex flex-col md:flex-row items-center justify-between gap-6 text-xs font-sans font-light text-zen-sage">
-                <p>&copy; {new Date().getFullYear()} Nook Specialty. Todos los derechos reservados.</p>
+                <p>&copy; {new Date().getFullYear()} Nook. Todos los derechos reservados.</p>
                 <div className="flex flex-wrap justify-center gap-6">
                     <a href="#" className="hover:text-white transition-colors">Términos y Condiciones</a>
                     <a href="#" className="hover:text-white transition-colors">Política de Privacidad</a>
