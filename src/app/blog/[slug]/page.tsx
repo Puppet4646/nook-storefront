@@ -28,7 +28,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         const title = post.title.rendered.toLowerCase();
         if (title.includes("matcha")) imageUrl = "https://images.unsplash.com/photo-1582793988951-9aed5509eb97?auto=format&fit=crop&q=80&w=1200";
         else if (title.includes("temperatura") || title.includes("preparación")) imageUrl = "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&q=80&w=1200";
-        else if (title.includes("terroir") || title.includes("origen")) imageUrl = "https://images.unsplash.com/photo-1594631252845-29fc458681b3?auto=format&fit=crop&q=80&w=1200";
+        else if (title.includes("terroir") || title.includes("origen")) imageUrl = "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&q=80&w=1200";
         else imageUrl = "https://images.unsplash.com/photo-1544787210-2213d84ad96b?auto=format&fit=crop&q=80&w=1200";
     }
 
