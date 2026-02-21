@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nook Specialty - Product Listing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#63cf17",
+                        "background-light": "#FAF9F6",
+                        "background-dark": "#182111",
+                        "sage-green": "#8C9A7B",
+                        "deep-charcoal": "#2C352D"
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "sans-serif"],
+                        "serif": ["Georgia", "serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background-color: #FAF9F6;
+        }
+        .serif-text {
+            font-family: 'Georgia', serif;
+        }
+        /* Custom scrollbar for mobile categories */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<!-- Top Navigation Header -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-sage-green/10">
+<div class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto w-full">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-deep-charcoal dark:text-slate-100">menu</span>
+</div>
+<h2 class="serif-text text-xl font-bold text-deep-charcoal dark:text-slate-100 tracking-tight">Nook Specialty</h2>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-deep-charcoal dark:text-slate-100">search</span>
+<div class="relative">
+<span class="material-symbols-outlined text-deep-charcoal dark:text-slate-100">shopping_bag</span>
+<span class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white">2</span>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto pb-24">
+<!-- Hero Section -->
+<section class="px-6 py-20 text-center">
+<h1 class="serif-text text-4xl md:text-5xl lg:text-6xl text-deep-charcoal dark:text-slate-100 mb-4">Nuestra Colección</h1>
+<p class="text-sage-green text-sm uppercase tracking-[0.2em] font-medium">Calidad Premium Artesanal</p>
+</section>
+<!-- Filter & Sort Bar -->
+<section class="px-6 mb-8">
+<div class="flex items-center justify-between border-b border-sage-green/20 pb-4">
+<div class="flex gap-6 overflow-x-auto hide-scrollbar">
+<button class="text-sm font-semibold text-deep-charcoal border-b-2 border-primary pb-4 -mb-[18px]">Todos</button>
+<button class="text-sm font-medium text-slate-500 hover:text-deep-charcoal transition-colors pb-4">Café</button>
+<button class="text-sm font-medium text-slate-500 hover:text-deep-charcoal transition-colors pb-4">Té</button>
+<button class="text-sm font-medium text-slate-500 hover:text-deep-charcoal transition-colors pb-4">Accesorios</button>
+</div>
+<button class="flex items-center gap-2 text-sm font-medium text-deep-charcoal">
+<span>Filtros</span>
+<span class="material-symbols-outlined text-sm">tune</span>
+</button>
+</div>
+</section>
+<!-- Product Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-10 px-6">
+<!-- Product 1 -->
+<div class="group flex flex-col gap-4">
+<div class="relative aspect-[3/4] overflow-hidden rounded-lg bg-slate-100">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Premium glass jar of Oolong tea leaves" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCGmxYlWkAO_u12qh-Pkga_0mxAjQWtrro1oP3633SUbqO5EFXM3yt0QQRuhIMPCHcGBYP48mGPirDzTPC8FyKCG3a4fbh2srvSbWUqo4YydXA2WNZAnvgUv1QqXgbTgZ1E0iKZQdI42j-dpbKDF7NSE7FWn_U6OFBB7bRgnIU36TFxMwMnwzpas9JiIW5UjMfEtRVw6lvYvMt9Imz73i-mE1Ohzzu4UEY-dRWo4873S6ir8vnWbIql796R8ArH2dV-RW7W88oFXYA");'>
+</div>
+<button class="absolute bottom-4 right-4 bg-white/90 dark:bg-black/80 backdrop-blur p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">add</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="serif-text text-lg text-deep-charcoal dark:text-slate-100 group-hover:underline underline-offset-4 decoration-1 decoration-sage-green/40">Oolong Imperial</h3>
+<div class="flex justify-between items-center">
+<p class="text-sage-green text-sm font-light">€24.00</p>
+<span class="text-[10px] tracking-widest text-deep-charcoal/40 dark:text-slate-400 font-bold uppercase group-hover:text-primary transition-colors">AÑADIR</span>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group flex flex-col gap-4">
+<div class="relative aspect-[3/4] overflow-hidden rounded-lg bg-slate-100">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Bag of dark roast coffee beans on table" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA6bxaHb-M0JDCr4Ai2RGyxFtuQz2FtnASPwhmjKw67Au4YOj83f27PgvSwr-nbsxggjcIcKUlknFbI8RmoP5HEYzDJloUtRDCWxf3pdQ2bGz5wwMBdeDsgLdwXufjspX_BvBvq1bXlF77g9CCr3AMXOog6a494fIsVXPGTFBDJAX1cDKWeMHPJSa_5rcpvNCj6YS1Aayhm5SNAMpaQFlM83sn2bbb4t4Ia92cPN6tlBcuHJEwRrtkd9GKPaTVZzIUNs1hynFKqkhc");'>
+</div>
+<button class="absolute bottom-4 right-4 bg-white/90 dark:bg-black/80 backdrop-blur p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">add</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="serif-text text-lg text-deep-charcoal dark:text-slate-100 group-hover:underline underline-offset-4 decoration-1 decoration-sage-green/40">Ethiopia Roast</h3>
+<div class="flex justify-between items-center">
+<p class="text-sage-green text-sm font-light">€18.00</p>
+<span class="text-[10px] tracking-widest text-deep-charcoal/40 dark:text-slate-400 font-bold uppercase group-hover:text-primary transition-colors">AÑADIR</span>
+</div>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group flex flex-col gap-4">
+<div class="relative aspect-[3/4] overflow-hidden rounded-lg bg-slate-100">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Ceremonial grade matcha powder in wooden bowl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDKgKm0gSbUF9nrKwup1CgUB3JgARRmetA4oYuy3UlKggAjHyj9IPvEA2MKUSbBu1QvzWH4HTk-77aon8AaLN4QQIV4tuKFWnEcnZBK4sD0OH-6iLro5S-QRVFbegtTQcZOK8lbFIjvorQbBbYYr739nMkUyl1laANeyWKNSqY9k9EfU9c6pLRjVkE5pITAAaLAZpwMFuUc7JJ07q275IN1ypD3GNvRjP6y1z5MmNqRKCo3HR4c7Mv5GeeuGzckFAf-s_wFvLwrm9g");'>
+</div>
+<button class="absolute bottom-4 right-4 bg-white/90 dark:bg-black/80 backdrop-blur p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">add</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="serif-text text-lg text-deep-charcoal dark:text-slate-100 group-hover:underline underline-offset-4 decoration-1 decoration-sage-green/40">Matcha Ceremonial</h3>
+<div class="flex justify-between items-center">
+<p class="text-sage-green text-sm font-light">€32.00</p>
+<span class="text-[10px] tracking-widest text-deep-charcoal/40 dark:text-slate-400 font-bold uppercase group-hover:text-primary transition-colors">AÑADIR</span>
+</div>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="group flex flex-col gap-4">
+<div class="relative aspect-[3/4] overflow-hidden rounded-lg bg-slate-100">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Coffee being brewed in a chemex flask" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAdaoq7Sb9DpP8bDNMaT1CLl1mPYwcvsWhi8b9G_NTUsujFGLSdbOqa8aKU2jV_nnvx730CcIdxbnGOCEEFsfXEl_NL2PRqg0fwM7X4PjHkE5zDrqZDKcTs3qzUUgG8u_-kfiJ65-mIbtY83cFC4lp3stXULNVFNsQc1wXFy_c3zBVgnpkeQsSRgXSlaYSXGNlEzgOuETN3szUl5K07VLANsTJL7EH1ZBhHh7WEJfve6DrJRko9OLMRDadqt4rWCWSVd-ezScNqiDw");'>
+</div>
+<button class="absolute bottom-4 right-4 bg-white/90 dark:bg-black/80 backdrop-blur p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">add</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="serif-text text-lg text-deep-charcoal dark:text-slate-100 group-hover:underline underline-offset-4 decoration-1 decoration-sage-green/40">Colombia Supremo</h3>
+<div class="flex justify-between items-center">
+<p class="text-sage-green text-sm font-light">€21.00</p>
+<span class="text-[10px] tracking-widest text-deep-charcoal/40 dark:text-slate-400 font-bold uppercase group-hover:text-primary transition-colors">AÑADIR</span>
+</div>
+</div>
+</div>
+<!-- Product 5 -->
+<div class="group flex flex-col gap-4">
+<div class="relative aspect-[3/4] overflow-hidden rounded-lg bg-slate-100">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Earl grey tea set on white surface" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAHbgesdp6DpJJ3fRRIIWw8nyipbh4mkBowImkU7xnag0QC6OQ8EMpxMT3yF6UKU7o55H3kCkdHemwVzwq-Rjp_HdkrDGNnWoy2BW9DQxEj8sRExZ6_wQV4ylhpFzlRfpgoKC-SLb9wQeBsok1rw7rTGuf3OqvSNs15nIY7N_IKjvZsd6B1USJZ2oDEcpeZvim7upx4V6B1exvzDti4SKStnJoBWR_sfoSxwelsodInNimlQFoeofAI2UFBv3bD9Zhkh4vaieSSFbA");'>
+</div>
+<button class="absolute bottom-4 right-4 bg-white/90 dark:bg-black/80 backdrop-blur p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">add</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="serif-text text-lg text-deep-charcoal dark:text-slate-100 group-hover:underline underline-offset-4 decoration-1 decoration-sage-green/40">Earl Grey Blue</h3>
+<div class="flex justify-between items-center">
+<p class="text-sage-green text-sm font-light">€19.00</p>
+<span class="text-[10px] tracking-widest text-deep-charcoal/40 dark:text-slate-400 font-bold uppercase group-hover:text-primary transition-colors">AÑADIR</span>
+</div>
+</div>
+</div>
+<!-- Product 6 -->
+<div class="group flex flex-col gap-4">
+<div class="relative aspect-[3/4] overflow-hidden rounded-lg bg-slate-100">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Minimalist manual coffee grinder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDORGjM8YqGJN6VVU2qmKAg-PJJupyI_cyDNo7iOFnp2KoT8nzfzBYC6BNJQkuvap5unZaeLFaGsb4fVqPh_g9jQ49ytArplGLJ48V31jV6Urj8hnqNmidNGE25lnjbuV65z6tFmc0FUa5RlKZncYBcykZF0ZP98LLBnzS-f6Z1l6HyjcThXvnhH0onf1_CnTUdAbdgWapTFTNCzvdcOzMzuBz_wgDWHQjeOvD-5o5Jw5aO1BfrXprOWTzUQXmL9-Ojo-gUm62Lfko");'>
+</div>
+<button class="absolute bottom-4 right-4 bg-white/90 dark:bg-black/80 backdrop-blur p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">add</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="serif-text text-lg text-deep-charcoal dark:text-slate-100 group-hover:underline underline-offset-4 decoration-1 decoration-sage-green/40">Molinillo Manual</h3>
+<div class="flex justify-between items-center">
+<p class="text-sage-green text-sm font-light">€45.00</p>
+<span class="text-[10px] tracking-widest text-deep-charcoal/40 dark:text-slate-400 font-bold uppercase group-hover:text-primary transition-colors">AÑADIR</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Load More -->
+<div class="flex justify-center mt-16 mb-8 px-6">
+<button class="w-full max-w-xs border border-deep-charcoal/20 dark:border-slate-700 py-4 px-8 text-xs tracking-widest uppercase font-semibold hover:bg-deep-charcoal hover:text-white transition-all duration-300">
+                Ver más productos
+            </button>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-t border-sage-green/10 pb-6 pt-3 px-6 z-50">
+<div class="flex justify-between items-center max-w-lg mx-auto">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">home</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Inicio</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-sage-green hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">local_cafe</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Tienda</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-sage-green hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Deseos</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-sage-green hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Perfil</span>
+</a>
+</div>
+</nav>
+</body></html>

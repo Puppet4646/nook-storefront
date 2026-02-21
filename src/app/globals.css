@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@import "tailwindcss";
+
+@theme inline {
+  --color-zen-bone: #FAF9F6;
+  --color-zen-dark: #2C352D;
+  --color-zen-sage: #8C9A7B;
+  --color-zen-sage-light: #F0F3EF;
+
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+}
+
+body {
+  background-color: var(--color-zen-bone);
+  color: var(--color-zen-dark);
+}

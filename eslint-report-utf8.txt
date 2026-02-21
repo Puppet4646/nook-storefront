@@ -1,0 +1,66 @@
+﻿
+C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\nook-storefront\src\app\api\checkout\route.ts
+   5:43  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  21:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  58:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\nook-storefront\src\app\checkout\page.tsx
+  165:45  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\nook-storefront\src\app\page.tsx
+  22:35  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                 @typescript-eslint/no-explicit-any
+  33:31  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                 @typescript-eslint/no-explicit-any
+  36:19  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\nook-storefront\src\app\producto\[slug]\page.tsx
+  79:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\nook-storefront\src\app\tienda\page.tsx
+  9:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\nook-storefront\src\components\AddToCartButton.tsx
+  5:65  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\nook-storefront\src\components\CartDrawer.tsx
+  13:9   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\nook-storefront\src\components\CartDrawer.tsx:13:9
+  11 |     // Prevent hydration errors by only rendering on client
+  12 |     useEffect(() => {
+> 13 |         setIsMounted(true);
+     |         ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  14 |     }, []);
+  15 |
+  16 |     if (!isMounted) return null;  react-hooks/set-state-in-effect
+  62:41  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      @next/next/no-img-element
+
+C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\nook-storefront\src\components\FeaturedCategories.tsx
+  24:25  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  44:25  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  62:25  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\nook-storefront\src\components\Hero.tsx
+  30:25  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\nook-storefront\src\components\ProductGrid.tsx
+   1:8   warning  'Image' is defined but never used                                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+  30:29  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\nook-storefront\src\components\Storytelling.tsx
+  32:25  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\Maste\.gemini\antigravity\scratch\Habilidades de Agentes\nook-storefront\src\lib\woo.ts
+   8:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  18:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  23:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  33:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  43:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+Ô£û 24 problems (13 errors, 11 warnings)
+

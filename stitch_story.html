@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nook Specialty - Nuestra Filosofía</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#54cf17",
+                        "sage-green": "#8C9A7B",
+                        "bone-white": "#FAF9F6",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#162111",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Work Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .serif-text {
+            font-family: 'Playfair Display', serif;
+        }
+        .bg-sage-custom {
+            background-color: #8C9A7B;
+        }
+        .text-bone-custom {
+            color: #FAF9F6;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark overflow-x-hidden">
+<!-- Header / Navigation Overlay -->
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-6">
+<button class="flex items-center justify-center size-10 rounded-full bg-bone-white/10 backdrop-blur-md text-bone-custom border border-bone-white/20">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<div class="text-bone-custom font-display font-bold tracking-tight text-xl">
+            Nook Specialty
+        </div>
+<button class="flex items-center justify-center size-10 rounded-full bg-bone-white/10 backdrop-blur-md text-bone-custom border border-bone-white/20">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</header>
+<!-- Main Content Section -->
+<main class="relative min-h-screen bg-sage-custom flex flex-col pt-24 pb-32 px-6 lg:px-20">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<!-- Left Side: Typography -->
+<div class="z-10 order-2 md:order-1">
+<p class="text-bone-custom/80 font-display text-xs font-medium tracking-[0.4em] mb-8 uppercase">
+                    Nuestra Filosofía
+                </p>
+<h1 class="serif-text text-bone-custom text-5xl md:text-7xl leading-[1.1] mb-8">
+                    Creemos en la pausa. En el <span class="italic">instante</span> donde el mundo se detiene y solo queda el aroma.
+                </h1>
+<div class="max-w-md">
+<p class="text-bone-custom/90 font-display font-light text-lg leading-relaxed">
+                        Nuestra selección es un tributo a la paciencia. Desde los campos de té envueltos en niebla hasta el tostado artesanal, cada paso está diseñado para honrar el ritual de lo simple y lo excepcional.
+                    </p>
+</div>
+<div class="mt-12">
+<button class="bg-bone-white text-sage-green font-display font-semibold px-8 py-4 rounded-lg flex items-center gap-3 hover:bg-white transition-colors">
+                        Descubrir la colección
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Right Side: Asymmetric Editorial Image -->
+<div class="relative order-1 md:order-2">
+<div class="relative aspect-[3/4] w-full max-w-md mx-auto md:ml-auto md:mr-0 rounded-lg overflow-hidden shadow-2xl transform md:translate-x-8 md:translate-y-12">
+<img class="w-full h-full object-cover" data-alt="A serene traditional matcha tea preparation ritual with wooden whisk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLPIaTvz0Z8YCKydrSOooZU5oRHC4fvoUIGiEwhb-9SdLQt78NtRQu4_00OAETdp9cdbJkk0LIo2rZBXxCE5WVbs1Wh1ujd7vTyLycXbkBbglUSv-mfy2LkulgHp5OLQFHqFXdo43R0JIV-mGTIpPGEP_pp5rQI57L62Ga3duVds6WyD6Ufs51NUWcL1GscBBq6ocvmoXRDSfD-5HoFcqywCus-cLv4o_pywp2UB29BXbTg98HL06hGL2wV1HgL3sk2YXeFZ0ofTY"/>
+</div>
+<!-- Decorative Element: Overflowing offset border -->
+<div class="absolute -top-4 -right-4 md:-top-8 md:-right-8 w-full h-full border border-bone-white/20 rounded-lg -z-10 pointer-events-none transform md:translate-x-8 md:translate-y-12"></div>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+<span class="text-bone-custom text-[10px] tracking-widest uppercase font-medium">Deslizar</span>
+<div class="w-px h-12 bg-bone-white"></div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Fixed) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 px-6 py-2 pb-6 z-50">
+<div class="flex justify-between items-center max-w-screen-md mx-auto">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium font-display">Inicio</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">coffee</span>
+<span class="text-[10px] font-medium font-display">Tienda</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">book_2</span>
+<span class="text-[10px] font-medium font-display">Historias</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium font-display">Perfil</span>
+</a>
+</div>
+</nav>
+</body></html>

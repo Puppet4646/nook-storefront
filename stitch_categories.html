@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2cbd0f",
+                        "background-light": "#FAF9F6",
+                        "background-dark": "#132210",
+                        "nook-dark": "#2C352D",
+                        "nook-muted": "#4A564B"
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .portrait-card {
+            aspect-ratio: 3 / 4;
+        }
+        .text-spacing-wide {
+            letter-spacing: 0.15em;
+        }
+        /* Custom scrollbar hide for clean mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-nook-dark dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header / Navigation Bar -->
+<header class="flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50 p-4 border-b border-nook-dark/5 justify-between">
+<div class="text-nook-dark dark:text-slate-100 flex size-10 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined">menu</span>
+</div>
+<h2 class="font-serif text-xl font-bold leading-tight tracking-tight flex-1 text-center text-nook-dark dark:text-slate-100">Nook Specialty</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="flex items-center justify-center text-nook-dark dark:text-slate-100">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 max-w-screen-xl mx-auto w-full px-4 py-16 md:py-32">
+<!-- Featured Categories Header -->
+<div class="text-center mb-12 md:mb-20">
+<h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-nook-dark dark:text-slate-100 mb-4 px-2">
+                    Explora Nuestras Esencias
+                </h1>
+<p class="text-nook-muted dark:text-slate-400 text-base md:text-lg font-light max-w-lg mx-auto leading-relaxed px-6">
+                    Meticulosamente seleccionadas para acompañar cada momento de tu día.
+                </p>
+<div class="mt-6 flex justify-center">
+<div class="h-px w-12 bg-primary"></div>
+</div>
+</div>
+<!-- Category Grid Section -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
+<!-- Category Card 1: Té Matcha -->
+<div class="group relative overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-800 shadow-sm transition-all duration-500 hover:shadow-xl">
+<div class="portrait-card relative w-full overflow-hidden">
+<img alt="Premium Japanese Matcha Tea Powder" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Vibrant green matcha tea whisked in bowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwxwwNv4-ekcXUZN4j4nqDlqzXfbKCoyAZX-HgJP5idBFIpgeNr6pkGVaIwGjTYzMweQzuovpv_Q9gPy5SAX-jJMm86DJThNJtIXnjP91vbr9_wjq8ecujhTdSFFTF_KYQbcM8Kwr0QGMkSZU8mV_pvlhMu5DMFQTljgmonD__X6WwcYNJ3nn8SxW4duDlCekkCzN46YW7DuN3LIfED1Su2IXwTnnu8RWb2VHz9WyXaNX9RNrTCNBlXtjf5JaSox-OIDpRFj3DdQQ"/>
+<!-- Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+<!-- Card Content -->
+<div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col items-center justify-end">
+<h3 class="text-white text-sm font-medium uppercase text-spacing-wide transition-all duration-300 group-hover:tracking-[0.25em]">
+                                Té Matcha
+                            </h3>
+<div class="mt-2 h-0.5 w-0 bg-primary/80 transition-all duration-500 group-hover:w-12"></div>
+</div>
+</div>
+<a aria-label="Explorar Té Matcha" class="absolute inset-0 z-10" href="#"></a>
+</div>
+<!-- Category Card 2: Té Negro -->
+<div class="group relative overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-800 shadow-sm transition-all duration-500 hover:shadow-xl">
+<div class="portrait-card relative w-full overflow-hidden">
+<img alt="Artisanal Black Tea Leaves close up" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Rich dark loose leaf black tea leaves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdk0XauLB55i5rVOpQkTTYEP02xItNJ53bx_9TIn5onzw832GfEtFCepWrbRl4_D2shNKPkrwjO1X2yLgRSFUm9sGCMYlEc4J6C17JOl9_QMf1pKRZzj4gl-kWIVxkrqKBQMjXIwon2j1asfdGfdjrQrZ4jocrAib3EM9bwq-tXdh8uNq4eW_2QFZTR5x6X129FxlxnWv2C4B2ZubumpPIsKMWNa3zNbORBDmzV152JGMKXiAWL_X8sU2mg3IdHnLRq6HEtTKj6k8"/>
+<!-- Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+<!-- Card Content -->
+<div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col items-center justify-end">
+<h3 class="text-white text-sm font-medium uppercase text-spacing-wide transition-all duration-300 group-hover:tracking-[0.25em]">
+                                Té Negro
+                            </h3>
+<div class="mt-2 h-0.5 w-0 bg-primary/80 transition-all duration-500 group-hover:w-12"></div>
+</div>
+</div>
+<a aria-label="Explorar Té Negro" class="absolute inset-0 z-10" href="#"></a>
+</div>
+<!-- Category Card 3: Café de Especialidad -->
+<div class="group relative overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-800 shadow-sm transition-all duration-500 hover:shadow-xl">
+<div class="portrait-card relative w-full overflow-hidden">
+<img alt="Roasted Specialty Coffee Beans" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="High quality roasted brown coffee beans" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5oSGTcL2u_ymdXMOoBjHlC2AP1kA1_ZkmlunnTQvUEdhChA1pAMzloI5urQQCOY5_k_TZQ_Ahn9ocbJN9pR8WeQnjtwg6wP1epuWjY7yar8SqsTUBF5-SWCVI6M7TJsV4jsFGSAcnJotecoWB7nnAcixqiJr39hXye8MkCYhL6gOkhk1ohM1qUZWgW_PFsw0HNx5yK-IyzKkImyzygM5r9nTcFcYdZOEQ0V9igtqHv4mY4zphgD-wUUE0lDej9Snhf0EfD9-wcWE"/>
+<!-- Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+<!-- Card Content -->
+<div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col items-center justify-end">
+<h3 class="text-white text-sm font-medium uppercase text-spacing-wide transition-all duration-300 group-hover:tracking-[0.25em] text-center">
+                                Café de Especialidad
+                            </h3>
+<div class="mt-2 h-0.5 w-0 bg-primary/80 transition-all duration-500 group-hover:w-12"></div>
+</div>
+</div>
+<a aria-label="Explorar Café de Especialidad" class="absolute inset-0 z-10" href="#"></a>
+</div>
+</div>
+<!-- Minimal Call to Action -->
+<div class="mt-16 text-center">
+<button class="inline-flex items-center gap-2 border-b-2 border-primary pb-1 text-sm font-semibold uppercase tracking-widest text-nook-dark dark:text-slate-100 hover:text-primary transition-colors">
+                    Ver Toda la Colección
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Bottom Navigation Bar (iOS style) -->
+<nav class="sticky bottom-0 z-50 flex border-t border-nook-dark/5 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-xl px-4 pb-8 pt-3 safe-area-bottom">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1">home</span>
+<p class="text-[10px] font-medium leading-none uppercase tracking-wider">Inicio</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-nook-muted dark:text-slate-400" href="#">
+<span class="material-symbols-outlined text-[24px]">storefront</span>
+<p class="text-[10px] font-medium leading-none uppercase tracking-wider">Tienda</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-nook-muted dark:text-slate-400" href="#">
+<span class="material-symbols-outlined text-[24px]">favorite</span>
+<p class="text-[10px] font-medium leading-none uppercase tracking-wider">Favoritos</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-nook-muted dark:text-slate-400" href="#">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<p class="text-[10px] font-medium leading-none uppercase tracking-wider">Perfil</p>
+</a>
+</nav>
+</div>
+</body></html>

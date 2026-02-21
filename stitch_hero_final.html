@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nook Specialty - Hero Variant 2</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8b997a",
+                        "background-light": "#FAF9F6",
+                        "background-dark": "#191a18",
+                        "nook-dark": "#2C352D",
+                        "nook-muted": "#4A564B",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Work Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-nook-dark dark:text-slate-100 antialiased overflow-x-hidden">
+<!-- iOS Status Bar Spacer -->
+<div class="h-12 w-full"></div>
+<!-- Navigation Header -->
+<header class="flex items-center justify-between px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-nook-dark dark:text-slate-100">menu</span>
+</div>
+<h2 class="font-display font-bold text-lg tracking-tight uppercase">Nook Specialty</h2>
+<div class="flex items-center gap-4">
+<button class="relative">
+<span class="material-symbols-outlined text-nook-dark dark:text-slate-100">shopping_bag</span>
+<span class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] text-white">2</span>
+</button>
+</div>
+</header>
+<!-- Main Hero Section - Asymmetric Layout -->
+<main class="relative min-h-[80vh] px-6 pt-8 pb-12 flex flex-col">
+<!-- Background Decorative Element (Subtle Zen pattern) -->
+<div class="absolute top-20 right-0 w-32 h-64 bg-primary/5 rounded-l-full -z-10"></div>
+<div class="grid grid-cols-12 gap-0 flex-1 items-start">
+<!-- Left Side: Typography & CTA (60% width on mobile grid) -->
+<div class="col-span-12 z-10 mt-4">
+<p class="font-display text-[10px] sm:text-xs font-medium tracking-[0.3em] text-nook-muted dark:text-primary mb-6 uppercase">
+                    Especialidad en Té y Café
+                </p>
+<h1 class="font-serif text-5xl sm:text-6xl text-nook-dark dark:text-slate-100 leading-[1.1] mb-8 max-w-[280px]">
+                    El Ritual del <span class="italic">Silencio</span> en cada sorbo
+                </h1>
+<div class="flex flex-col gap-8">
+<button class="bg-primary hover:bg-primary/90 text-white font-display text-xs font-bold tracking-widest uppercase px-8 py-5 rounded-lg w-fit transition-all shadow-sm">
+                        Explorar la Esencia
+                    </button>
+<div class="flex items-center gap-4 text-nook-muted dark:text-slate-400">
+<div class="h-[1px] w-12 bg-primary/40"></div>
+<span class="text-[10px] italic font-serif">Est. 2024</span>
+</div>
+</div>
+</div>
+<!-- Right Side: Vertical Featured Image (Offset) -->
+<div class="col-span-12 mt-12 flex justify-end">
+<div class="relative w-4/5 aspect-[3/4] rounded-xl overflow-hidden shadow-2xl border-[12px] border-white dark:border-background-dark">
+<img alt="Premium tea ritual" class="w-full h-full object-cover" data-alt="Premium tea leaves being prepared in ceramic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKYy1h_IivG5ksbNE2qA2iwCK4BGjPLFVJpcF0C8d1r7hLTfHyOVH6_B5QJbL2-eJq1HktvJVsVT9lHsazOCmk83mS365PwhqYKW72VQQU-MrG1NmuCddm4O4X9NkBzrnnXpdOMAwXY7iEt2GBJHPO0jvA7QwCrC48IE9Y0_QI36K76qoemB22M-kQu6ydv0VYhWphndikf_noWB7LqxmYz8_mzII69ccCp6HDN68cQzruLA4lBcfgZUDRPaFdaNGSk3d-ltH_CbU"/>
+<!-- Small caption/badge over image -->
+<div class="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-md p-3 rounded-lg border border-white/20">
+<p class="text-white text-[10px] font-display font-light leading-relaxed">
+                            Cosechas seleccionadas de las montañas de Shizuoka.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Decorative Leaf Icon -->
+<div class="absolute bottom-20 left-4 text-primary/20 scale-[4]">
+<span class="material-symbols-outlined">eco</span>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Fixed for Mobile Experience) -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-xl border-t border-primary/10 px-6 py-3 flex items-center justify-between">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined font-variation-fill">home</span>
+<span class="text-[10px] font-medium tracking-tighter uppercase">Inicio</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-nook-muted dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-[10px] font-medium tracking-tighter uppercase">Tienda</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-nook-muted dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-[10px] font-medium tracking-tighter uppercase">Deseos</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-nook-muted dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium tracking-tighter uppercase">Perfil</span>
+</a>
+</nav>
+<!-- Content padding for bottom nav -->
+<div class="h-20 w-full"></div>
+</body></html>
