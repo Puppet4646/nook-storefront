@@ -6,6 +6,7 @@ interface Category {
     name: string;
     slug: string;
     count: number;
+    parent: number;
 }
 
 export default function CategoryFilter({ categories }: { categories: Category[] }) {
