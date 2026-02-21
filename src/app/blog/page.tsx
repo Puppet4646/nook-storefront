@@ -26,7 +26,16 @@ export default async function BlogPage() {
                         {posts.map((post: any) => {
                             // Extraer media destacada embedida
                             const featuredMedia = post._embedded?.['wp:featuredmedia']?.[0];
-                            const imageUrl = featuredMedia?.source_url || "/images/placeholder-tea.jpg"; // Fallback si no hay imagen
+
+                            // Lógica de fallback inteligente basada en palabras clave del título
+                            let imageUrl = featuredMedia?.source_url;
+                            if (!imageUrl) {
+                                const title = post.title.rendered.toLowerCase();
+                                if (title.includes("matcha")) imageUrl = "https://images.unsplash.com/photo-1582793988951-9aed5509eb97?auto=format&fit=crop&q=80&w=800";
+                                else if (title.includes("temperatura") || title.includes("preparación")) imageUrl = "https://images.unsplash.com/photo-1594631252845-29fc458681b3?auto=format&fit=crop&q=80&w=800";
+                                else if (title.includes("terroir") || title.includes("origen")) imageUrl = "https://images.unsplash.com/photo-1559839914-17aae19ceafl?auto=format&fit=crop&q=80&w=800";
+                                else imageUrl = "https://images.unsplash.com/photo-1544787210-2213d84ad96b?auto=format&fit=crop&q=80&w=800";
+                            }
 
                             // Formateo de fecha Simple
                             const date = new Date(post.date).toLocaleDateString("es-ES", {
