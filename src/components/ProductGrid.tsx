@@ -24,11 +24,12 @@ function ProductImage({ src, alt }: { src: string; alt: string }) {
     const fallbackUrl = "https://picsum.photos/seed/nook-tea/800/1067";
 
     return (
-        <img
+        <Image
             src={hasError ? fallbackUrl : imgSrc}
             alt={alt}
+            width={800}
+            height={1067}
             className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-105 ${hasError ? 'opacity-90 contrast-90' : ''}`}
-            loading="lazy"
             onError={() => {
                 if (!hasError) {
                     setHasError(true);

@@ -19,12 +19,11 @@ export default function CartDrawer() {
     return (
         <>
             {/* Backdrop overlay */}
-            {isOpen && (
-                <div
-                    className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 transition-opacity"
-                    onClick={toggleCart}
-                />
-            )}
+            <div
+                className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-50 transition-opacity duration-500 ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+                    }`}
+                onClick={toggleCart}
+            />
 
             {/* Slide-out panel */}
             <div

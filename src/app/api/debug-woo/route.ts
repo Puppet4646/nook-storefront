@@ -25,14 +25,16 @@ export async function GET() {
                 categories: categories?.length || 0
             },
             samples: {
-                products: products?.slice(0, 5).map((p: any) => p.name) || []
+                products: products?.slice(0, 5).map((p: { name: string }) => p.name) || []
             }
         });
-    } catch (error: any) {
+    } catch (error: unknown) {
+        const message = error instanceof Error ? error.message : "Unknown error";
+        const stack = error instanceof Error ? error.stack : undefined;
         return NextResponse.json({
             status: "error",
-            message: error.message,
-            stack: error.stack
+            message: message,
+            stack: stack
         }, { status: 500 });
     }
 }

@@ -69,10 +69,11 @@ export default async function Home() {
               return (
                 <Link href={`/blog/${post.slug}`} key={post.id} className="group">
                   <div className="relative aspect-video overflow-hidden mb-6">
-                    <img
+                    <ProductImage
                       src={imageUrl}
                       alt={post.title.rendered}
-                      className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 grayscale-[20%] group-hover:grayscale-0"
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105 grayscale-[20%] group-hover:grayscale-0"
                     />
                   </div>
                   <h3 className="font-serif text-xl text-zen-dark mb-3 leading-snug group-hover:text-zen-sage transition-colors" dangerouslySetInnerHTML={{ __html: post.title.rendered }} />

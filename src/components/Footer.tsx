@@ -27,9 +27,9 @@ export default function Footer() {
                 <div>
                     <h3 className="uppercase font-sans font-semibold text-xs tracking-widest text-[#8C9A7B] mb-6">Explorar</h3>
                     <ul className="flex flex-col gap-4 font-sans font-light text-sm text-zen-bone/80">
-                        <li><a href="#" className="hover:text-white transition-colors">Tienda</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">Nuestra Filosofía</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">Talleres & Catas</a></li>
+                        <li><a href="/tienda" className="hover:text-white transition-colors">Tienda</a></li>
+                        <li><a href="/nosotros" className="hover:text-white transition-colors">Nuestra Filosofía</a></li>
+                        <li><a href="/blog" className="hover:text-white transition-colors">Nook Journal</a></li>
                     </ul>
                 </div>
 
@@ -37,9 +37,9 @@ export default function Footer() {
                 <div>
                     <h3 className="uppercase font-sans font-semibold text-xs tracking-widest text-[#8C9A7B] mb-6">Asistencia</h3>
                     <ul className="flex flex-col gap-4 font-sans font-light text-sm text-zen-bone/80">
-                        <li><a href="#" className="hover:text-white transition-colors">Envíos y Devoluciones</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">FAQ</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">Contacto</a></li>
+                        <li><a href="/legal/envios" className="hover:text-white transition-colors">Envíos y Devoluciones</a></li>
+                        <li><a href="/faq" className="hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="/contacto" className="hover:text-white transition-colors">Contacto</a></li>
                     </ul>
                 </div>
 
@@ -47,11 +47,11 @@ export default function Footer() {
 
             {/* Bottom Legal & Copyright Bar */}
             <div className="max-w-7xl mx-auto pt-8 border-t border-zen-sage/30 flex flex-col md:flex-row items-center justify-between gap-6 text-xs font-sans font-light text-zen-sage">
-                <p>&copy; {new Date().getFullYear()} Nook. Todos los derechos reservados.</p>
+                <p>&copy; {new Date().getFullYear()} Nook Specialy Tea. Todos los derechos reservados.</p>
                 <div className="flex flex-wrap justify-center gap-6">
-                    <a href="#" className="hover:text-white transition-colors">Términos y Condiciones</a>
-                    <a href="#" className="hover:text-white transition-colors">Política de Privacidad</a>
-                    <a href="#" className="hover:text-white transition-colors">Política de Cookies</a>
+                    <a href="/legal/aviso-legal" className="hover:text-white transition-colors">Aviso Legal</a>
+                    <a href="/legal/privacidad" className="hover:text-white transition-colors">Privacidad</a>
+                    <a href="#" className="hover:text-white transition-colors">Cookies</a>
                 </div>
             </div>
         </footer>
