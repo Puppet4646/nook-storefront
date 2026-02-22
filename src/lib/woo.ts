@@ -1,36 +1,51 @@
 import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api";
 
-// Ensure we are not exposing tokens on the client side
-if (typeof window !== 'undefined') {
-    throw new Error("WooCommerce API should only be called on the server side.");
-}
+// Helper to get sanitized env variables
+const getEnv = (key: string, fallback: string = ""): string => {
+    return (process.env[key] || fallback).trim();
+};
 
-let wooApi: any;
-try {
-    wooApi = new (WooCommerceRestApi as any)({
-        url: process.env.NEXT_PUBLIC_WC_URL || 'https://fallback.test',
-        consumerKey: process.env.WC_CONSUMER_KEY || 'fallback_key',
-        consumerSecret: process.env.WC_CONSUMER_SECRET || 'fallback_secret',
+let wooApiInstance: any = null;
+
+function getWooApi() {
+    if (wooApiInstance) return wooApiInstance;
+
+    const url = getEnv("NEXT_PUBLIC_WC_URL");
+    const consumerKey = getEnv("WC_CONSUMER_KEY");
+    const consumerSecret = getEnv("WC_CONSUMER_SECRET");
+
+    if (!url || !consumerKey || !consumerSecret) {
+        console.warn("WooCommerce API credentials missing or incomplete.");
+    }
+
+    wooApiInstance = new (WooCommerceRestApi as any)({
+        url: url || "https://fallback.test",
+        consumerKey: consumerKey || "fallback_key",
+        consumerSecret: consumerSecret || "fallback_secret",
         version: "wc/v3",
-        queryStringAuth: true // Important for many generic hostings
+        queryStringAuth: true
     });
-} catch (e) {
-    console.warn("WooCommerce API keys missing. Fallback initialized for build context.");
+
+    return wooApiInstance;
 }
-export { wooApi };
 
 export async function fetchProducts(category = null) {
     try {
-        const params: Record<string, string | number> = { per_page: 20, status: 'publish' };
+        const api = getWooApi();
+        const params: Record<string, string | number> = { per_page: 100, status: 'publish' };
         if (category) params.category = category as string;
 
-        const response = await wooApi.get("products", params);
+        console.log(`WOO DEBUG: Fetching products from ${getEnv("NEXT_PUBLIC_WC_URL")}...`);
+        const response = await api.get("products", params);
+        console.log(`WOO DEBUG: Success! Found ${response.data.length} products.`);
         return response.data;
-    } catch (error: unknown) {
-        if (error instanceof Error) {
-            console.error("Error fetching WooCommerce products:", (error as Error).message);
+    } catch (error: any) {
+        console.error("WOO DEBUG: Error fetching products:");
+        if (error.response) {
+            console.error("- Status:", error.response.status);
+            console.error("- Data:", JSON.stringify(error.response.data));
         } else {
-            console.error("Error fetching WooCommerce products:", error);
+            console.error("- Message:", error.message);
         }
         return [];
     }
@@ -38,24 +53,22 @@ export async function fetchProducts(category = null) {
 
 export async function fetchCategories() {
     try {
-        const response = await wooApi.get("products/categories", { per_page: 100 });
+        const api = getWooApi();
+        const response = await api.get("products/categories", { per_page: 100 });
         return response.data;
     } catch (error: unknown) {
-        if (error instanceof Error) {
-            console.error("Error fetching WooCommerce categories:", error.message);
-        }
+        console.error("Error fetching WooCommerce categories:", error instanceof Error ? error.message : error);
         return [];
     }
 }
 
 export async function fetchProductBySlug(slug: string) {
     try {
-        const response = await wooApi.get("products", { slug });
+        const api = getWooApi();
+        const response = await api.get("products", { slug });
         return response.data;
     } catch (error: unknown) {
-        if (error instanceof Error) {
-            console.error(`Error fetching WooCommerce product ${slug}:`, error.message);
-        }
+        console.error(`Error fetching WooCommerce product ${slug}:`, error instanceof Error ? error.message : error);
         return [];
     }
 }

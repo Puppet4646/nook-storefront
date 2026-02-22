@@ -28,7 +28,6 @@ export default function Footer() {
                     <h3 className="uppercase font-sans font-semibold text-xs tracking-widest text-[#8C9A7B] mb-6">Explorar</h3>
                     <ul className="flex flex-col gap-4 font-sans font-light text-sm text-zen-bone/80">
                         <li><a href="#" className="hover:text-white transition-colors">Tienda</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">Suscripciones</a></li>
                         <li><a href="#" className="hover:text-white transition-colors">Nuestra Filosofía</a></li>
                         <li><a href="#" className="hover:text-white transition-colors">Talleres & Catas</a></li>
                     </ul>

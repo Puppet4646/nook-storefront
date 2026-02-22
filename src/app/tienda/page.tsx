@@ -24,12 +24,15 @@ export default async function TiendaPage({
     // 2. Fetch de datos en paralelo (Categorías y Listado Global)
     try {
         const [productsRes, categoriesRes] = await Promise.all([
-            fetchProducts(),
+            fetchProducts(null),
             fetchCategories()
         ]);
 
-        // Filtramos categorías vacías y la 'uncategorized'
-        categories = categoriesRes.filter((c: any) => c.slug !== 'uncategorized' && c.count > 0);
+        console.log("TIENDA DEBUG: Products fetched count:", productsRes?.length || 0);
+        console.log("TIENDA DEBUG: Categories fetched count:", categoriesRes?.length || 0);
+
+        // Filtramos categorías vacías solo si no estamos en modo desarrollo/inicial
+        categories = categoriesRes.filter((c: any) => c.slug !== 'uncategorized');
         let baseProducts = productsRes || [];
 
         // 3. Filtrar por Categoría manualmente (ya que la API a veces es lenta)

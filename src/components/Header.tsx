@@ -20,8 +20,7 @@ export default function Header() {
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex items-center gap-8 font-sans font-medium text-xs tracking-[0.15em] uppercase text-zen-sage">
                     <Link href="/tienda" className="hover:text-zen-dark transition-colors">Tienda</Link>
-                    <Link href="/blog" className="hover:text-zen-dark transition-colors">Journal</Link>
-                    <Link href="#" className="hover:text-zen-dark transition-colors">Suscripciones</Link>
+                    <Link href="/blog" className="hover:text-zen-dark transition-colors">Blog</Link>
                 </nav>
 
                 {/* Logo */}
