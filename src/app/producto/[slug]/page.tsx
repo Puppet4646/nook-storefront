@@ -7,8 +7,9 @@ import Link from "next/link";
 
 export const revalidate = 60;
 
-export default async function ProductDetailPage({ params }: { params: { slug: string } }) {
-    const products = await fetchProductBySlug(params.slug);
+export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+    const products = await fetchProductBySlug(slug);
 
     if (!products || products.length === 0) {
         return notFound();
