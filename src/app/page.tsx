@@ -29,7 +29,7 @@ export default async function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {products.slice(0, 3).map((p: any) => (
-            <div key={p.id} className="group cursor-pointer">
+            <Link key={p.id} href={`/producto/${p.slug}`} className="group cursor-pointer block">
               <div className="relative aspect-[4/5] overflow-hidden bg-[#F5F5F0] mb-6">
                 <ProductImage
                   src={p.images?.[0]?.src}
@@ -38,9 +38,9 @@ export default async function Home() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-              <h3 className="font-serif text-lg text-zen-dark mb-1">{p.name}</h3>
+              <h3 className="font-serif text-lg text-zen-dark mb-1 transition-colors group-hover:text-zen-sage">{p.name}</h3>
               <div className="font-sans text-xs text-zen-sage tracking-widest uppercase" dangerouslySetInnerHTML={{ __html: p.price_html }} />
-            </div>
+            </Link>
           ))}
         </div>
       </section>
