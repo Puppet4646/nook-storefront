@@ -2,8 +2,8 @@ import { fetchProductBySlug, fetchProducts } from "@/lib/woo";
 import { notFound } from "next/navigation";
 import AddToCartButton from "@/components/AddToCartButton";
 import ProductGallery from "@/components/ProductGallery";
-import ProductAccordion from "@/components/ProductAccordion";
 import ProductGrid from "@/components/ProductGrid";
+import Link from "next/link";
 
 export const revalidate = 60;
 
@@ -16,92 +16,137 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
 
     const product = products[0];
 
-    // Fetch related products (same category)
+    // Helper to get attribute values safely
+    const getAttr = (name: string) => product.attributes?.find((a: any) => a.name === name)?.options?.[0] || "";
+
+    const tastingNotes = getAttr("Notas de Cata");
+    const prepTemp = getAttr("Temperatura");
+    const prepTime = getAttr("Tiempo");
+    const prepIntensity = getAttr("Intensidad");
+
+    // Related products (same category)
     let relatedProducts: any[] = [];
     if (product.categories && product.categories.length > 0) {
         const categoryId = product.categories[0].id;
         const allCategoryProducts = await fetchProducts(categoryId);
-        // Exclude the current product and limit to 4
         relatedProducts = allCategoryProducts
             .filter((p: any) => p.id !== product.id)
             .slice(0, 4);
     }
 
-    const imageUrl = product.images.length > 0
-        ? product.images[0].src
-        : "https://images.unsplash.com/photo-1579761763131-dae193fb69ee?q=80&w=800&auto=format&fit=crop";
-
-    // Strip WordPress HTML tags from the short description
-    // In a real app we'd use 'html-react-parser' or similar
-    const cleanDescription = product.short_description
-        ? product.short_description.replace(/<[^>]*>?/gm, '')
-        : "Una experiencia vibrante y premium para acompañar cada momento de tu día.";
-
     return (
-        <>
-            <main className="relative bg-zen-bone min-h-screen lg:flex lg:flex-row-reverse pb-16 lg:pb-0">
+        <div className="bg-white min-h-screen">
+            {/* Header Section: Gallery + Basic Info */}
+            <main className="relative lg:flex lg:flex-row-reverse">
 
-                {/* Right Side: Product Details */}
-                <div className="relative lg:w-1/2 px-8 pt-32 lg:pt-40 lg:px-16 xl:px-24 flex flex-col min-h-[50vh] lg:min-h-screen">
+                {/* Product Info Panel */}
+                <div className="lg:w-1/2 px-6 pt-32 pb-16 lg:pt-48 lg:px-20 flex flex-col justify-center">
+                    <div className="max-w-xl">
+                        <div className="flex items-center gap-4 mb-6">
+                            <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-zen-sage">Origin: Yunnan</span>
+                            <div className="h-px flex-1 bg-zen-sage/20" />
+                            <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-zen-sage">No. {product.id.toString().slice(-3)}</span>
+                        </div>
 
-                    {/* Title & Price */}
-                    <div className="mb-10 text-left lg:mt-8">
-                        <h1 className="font-serif text-4xl lg:text-5xl mb-4 leading-tight text-zen-dark">
+                        <h1 className="font-serif text-5xl lg:text-7xl mb-6 leading-[1.1] text-zen-dark">
                             {product.name}
                         </h1>
-                        <div className="text-zen-sage font-sans font-medium text-xl tracking-wide" dangerouslySetInnerHTML={{ __html: product.price_html || `€${product.price}` }} />
-                    </div>
 
-                    {/* Poetic Description */}
-                    <div className="mb-12 max-w-lg">
-                        <p className="font-sans font-light leading-relaxed text-zen-dark/80 text-sm italic">
-                            {cleanDescription}
-                        </p>
-                    </div>
+                        <div className="mb-8 flex items-baseline gap-4">
+                            <span className="text-2xl font-sans font-light text-zen-dark" dangerouslySetInnerHTML={{ __html: product.price_html || `€${product.price}` }} />
+                            <span className="text-xs uppercase tracking-widest text-zen-sage/60">(Incl. IVA)</span>
+                        </div>
 
-                    {/* CTA Button */}
-                    <div className="mb-16">
-                        <AddToCartButton product={product} />
-                    </div>
+                        <div className="prose prose-sm prose-zen mb-12" dangerouslySetInnerHTML={{ __html: product.short_description }} />
 
-                    {/* Dynamic Accordions */}
-                    <div className="space-y-0 border-t border-zen-sage/20 mb-12">
-                        <ProductAccordion
-                            title="Descripción Completa"
-                            content={product.description
-                                ? <div dangerouslySetInnerHTML={{ __html: product.description.replace(/style="[^"]*"/g, "") }} className="prose prose-sm prose-zen" />
-                                : "Este producto de especialidad ha sido cuidadosamente seleccionado basándonos en sus perfiles de taza excepcionales y prácticas de cultivo éticas."}
-                        />
-                        <ProductAccordion
-                            title="Elaboración y Cuidado"
-                            content="Para preservar la delicadeza de nuestras hojas y granos, almacénalos en un lugar fresco y alejado de la luz solar directa. Consulta nuestra guía de infusión en la tarjeta adjunta a tu pedido."
-                        />
-                        <ProductAccordion
-                            title="Envío y Devoluciones"
-                            content="Procesamos pedidos en 24-48 horas. Envío estándar en península (2-3 días). Aceptamos devoluciones de productos sin abrir hasta 14 días después de la entrega."
-                        />
-                    </div>
+                        <div className="flex flex-col sm:flex-row gap-4 mb-20">
+                            <AddToCartButton product={product} />
+                        </div>
 
+                        {/* Quick Prep Icons */}
+                        <div className="grid grid-cols-3 gap-8 py-8 border-y border-zen-sage/10">
+                            <div className="text-center">
+                                <span className="block text-[10px] uppercase tracking-widest text-zen-sage mb-2">Temp</span>
+                                <span className="text-xl font-serif text-zen-dark">{prepTemp || "95ºC"}</span>
+                            </div>
+                            <div className="text-center">
+                                <span className="block text-[10px] uppercase tracking-widest text-zen-sage mb-2">Time</span>
+                                <span className="text-xl font-serif text-zen-dark">{prepTime || "3 min"}</span>
+                            </div>
+                            <div className="text-center">
+                                <span className="block text-[10px] uppercase tracking-widest text-zen-sage mb-2">Intensity</span>
+                                <span className="text-xl font-serif text-zen-dark">{prepIntensity || "8/10"}</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                {/* Left Side: Dynamic Gallery */}
-                <div className="w-full lg:w-1/2 -order-1 lg:order-none z-10">
+                {/* Vertical Gallery */}
+                <div className="lg:w-1/2">
                     <ProductGallery images={product.images} />
                 </div>
-
             </main>
 
-            {/* Productos Relacionados */}
-            {
-                relatedProducts.length > 0 && (
-                    <section className="bg-white py-24 border-t border-zen-sage/10">
-                        <div className="max-w-7xl mx-auto px-6">
-                            <h2 className="font-serif text-3xl text-zen-dark mb-12 text-center">También podría interesarte</h2>
-                            <ProductGrid products={relatedProducts} />
+            {/* Sensory Experience (Full Width Section) */}
+            <section className="bg-zen-dark text-zen-bone py-32 lg:py-48 px-6">
+                <div className="max-w-4xl mx-auto text-center">
+                    <span className="font-sans text-[10px] uppercase tracking-[0.5em] mb-12 block opacity-40">Sensory Experience</span>
+                    <h2 className="font-serif text-4xl lg:text-6xl mb-12 italic leading-tight">
+                        &quot;{tastingNotes || "Una sinfonía de matices que despiertan el espíritu con cada sorbo."}&quot;
+                    </h2>
+                    <div className="w-24 h-px bg-zen-bone/20 mx-auto mb-12" />
+                    <p className="font-sans font-light text-lg lg:text-xl tracking-wide max-w-2xl mx-auto opacity-80 leading-relaxed">
+                        Perfiles sensoriales: {tastingNotes || "Cuerpo equilibrado con un final persistente y aromático."}
+                    </p>
+                </div>
+            </section>
+
+            {/* Narrative / Context Section */}
+            <section className="py-32 lg:py-48 px-6 bg-[#F9F9F7]">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                    <div className="order-2 lg:order-1">
+                        <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-zen-sage mb-8 block">The Narrative</span>
+                        <h3 className="font-serif text-4xl lg:text-5xl mb-8 text-zen-dark leading-snug">
+                            Historias guardadas en cada hebra
+                        </h3>
+                        <div className="prose prose-lg prose-zen" dangerouslySetInnerHTML={{ __html: product.description }} />
+                        <Link href="/tienda" className="inline-block mt-12 font-sans text-xs uppercase tracking-[0.3em] border-b border-zen-dark pb-1 text-zen-dark hover:text-zen-sage hover:border-zen-sage transition-colors">
+                            Descubre la colección completa
+                        </Link>
+                    </div>
+                    <div className="order-1 lg:order-2 aspect-[4/5] relative bg-zen-bone">
+                        {product.images?.[1] && (
+                            <img
+                                src={product.images[1].src}
+                                alt="Ambiental detail"
+                                className="w-full h-full object-cover grayscale-[20%] sepia-[10%] hover:grayscale-0 transition-all duration-1000"
+                            />
+                        )}
+                    </div>
+                </div>
+            </section>
+
+            {/* Related Products */}
+            {relatedProducts.length > 0 && (
+                <section className="py-32 bg-white">
+                    <div className="max-w-7xl mx-auto px-6">
+                        <div className="flex items-baseline justify-between mb-16">
+                            <h2 className="font-serif text-4xl text-zen-dark italic">Quizás desees probar...</h2>
+                            <Link href="/tienda" className="font-sans text-[10px] uppercase tracking-[0.3em] opacity-40 hover:opacity-100 transition-opacity">Ver todo</Link>
                         </div>
-                    </section>
-                )
-            }
-        </>
+                        <ProductGrid products={relatedProducts} />
+                    </div>
+                </section>
+            )}
+
+            {/* Sticky Floating Add to Cart (Mobile) */}
+            <div className="lg:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-xl border-t border-zen-sage/10 z-50 flex items-center justify-between gap-4">
+                <div className="flex flex-col">
+                    <span className="text-[10px] uppercase tracking-widest text-zen-sage">{product.name}</span>
+                    <span className="font-sans text-sm font-medium" dangerouslySetInnerHTML={{ __html: product.price_html }} />
+                </div>
+                <AddToCartButton product={product} />
+            </div>
+        </div>
     );
 }
