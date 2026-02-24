@@ -65,8 +65,18 @@ export async function fetchCategories() {
 export async function fetchProductBySlug(slug: string) {
     try {
         const api = getWooApi();
-        const response = await api.get("products", { slug });
-        return response.data;
+        // Ensure slug is passed as a query parameter correctly
+        const response = await api.get("products", {
+            slug: slug,
+            status: 'publish'
+        });
+
+        // Return only products that exactly match the slug as a double check
+        const data = response.data;
+        if (Array.isArray(data)) {
+            return data.filter((p: any) => p.slug === slug);
+        }
+        return [];
     } catch (error: unknown) {
         console.error(`Error fetching WooCommerce product ${slug}:`, error instanceof Error ? error.message : error);
         return [];
