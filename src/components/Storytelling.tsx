@@ -2,19 +2,19 @@ import Image from "next/image";
 
 export default function Storytelling() {
     return (
-        <section className="relative w-full bg-zen-sage flex flex-col pt-24 pb-32 px-6 lg:px-20 overflow-hidden">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center">
+        <section className="relative w-full bg-zen-sage flex flex-col py-16 md:pt-24 md:pb-32 px-5 md:px-6 lg:px-20 overflow-hidden">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-24 items-center">
 
                 {/* Left Side: Typography */}
                 <div className="z-10 order-2 md:order-1 flex flex-col">
-                    <p className="text-zen-bone/80 font-sans text-xs font-medium tracking-[0.4em] mb-8 uppercase">
+                    <p className="text-zen-bone/80 font-sans text-xs font-medium tracking-[0.4em] mb-4 md:mb-8 uppercase">
                         Nuestra Filosofía
                     </p>
-                    <h2 className="font-serif text-zen-bone text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-8">
+                    <h2 className="font-serif text-zen-bone text-3xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] mb-6 md:mb-8">
                         Creemos en la pausa. En el <span className="italic">instante</span> donde el mundo se detiene y solo queda el aroma.
                     </h2>
                     <div className="max-w-xl">
-                        <p className="text-zen-bone/90 font-sans font-light text-lg leading-relaxed mb-12">
+                        <p className="text-zen-bone/90 font-sans font-light text-base md:text-lg leading-relaxed mb-8 md:mb-12">
                             Nuestra selección es un tributo a la paciencia. Desde los campos de té envueltos en niebla hasta el tostado artesanal, cada paso está diseñado para honrar el ritual de lo simple y lo excepcional.
                         </p>
                     </div>

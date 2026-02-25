@@ -2,12 +2,12 @@ import Image from "next/image";
 
 export default function FeaturedCategories() {
     return (
-        <section className="bg-zen-bone w-full px-6 py-24 md:py-32">
+        <section className="bg-zen-bone w-full px-4 md:px-6 py-16 md:py-24 lg:py-32">
             <div className="max-w-7xl mx-auto">
 
                 {/* Featured Categories Header */}
-                <div className="text-center mb-16 md:mb-24">
-                    <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-zen-dark mb-6 px-2">
+                <div className="text-center mb-10 md:mb-16 lg:mb-24">
+                    <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-zen-dark mb-4 md:mb-6 px-2">
                         Explora Nuestras Esencias
                     </h2>
                     <p className="text-[#4A564B] text-base md:text-lg font-sans font-light max-w-lg mx-auto leading-relaxed px-6">
@@ -19,10 +19,10 @@ export default function FeaturedCategories() {
                 </div>
 
                 {/* Category Grid Section */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-10">
 
                     {/* Category Card 1: Té Matcha */}
-                    <div className="group relative overflow-hidden rounded-sm bg-white shadow-sm transition-all duration-500 hover:shadow-xl aspect-[3/4]">
+                    <div className="group relative overflow-hidden rounded-sm bg-white shadow-sm transition-all duration-500 hover:shadow-xl aspect-[4/5] md:aspect-[3/4]">
                         <Image
                             alt="Premium Japanese Matcha Tea Powder"
                             className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -44,7 +44,7 @@ export default function FeaturedCategories() {
                     </div>
 
                     {/* Category Card 2: Té Negro */}
-                    <div className="group relative overflow-hidden rounded-sm bg-white shadow-sm transition-all duration-500 hover:shadow-xl aspect-[3/4]">
+                    <div className="group relative overflow-hidden rounded-sm bg-white shadow-sm transition-all duration-500 hover:shadow-xl aspect-[4/5] md:aspect-[3/4]">
                         <Image
                             alt="Artisanal Black Tea Leaves"
                             className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -64,7 +64,7 @@ export default function FeaturedCategories() {
                     </div>
 
                     {/* Category Card 3: Café de Especialidad */}
-                    <div className="group relative overflow-hidden rounded-sm bg-white shadow-sm transition-all duration-500 hover:shadow-xl aspect-[3/4]">
+                    <div className="group relative overflow-hidden rounded-sm bg-white shadow-sm transition-all duration-500 hover:shadow-xl aspect-[4/5] md:aspect-[3/4]">
                         <Image
                             alt="Roasted Specialty Coffee Beans"
                             className="object-cover transition-transform duration-700 group-hover:scale-105"

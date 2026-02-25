@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
     return (
-        <section className="relative w-full min-h-[85vh] flex items-center justify-center overflow-hidden">
+        <section className="relative w-full min-h-[70vh] md:min-h-[85vh] flex items-center justify-center overflow-hidden">
             {/* Background Image Loading with Next/Image */}
             <div className="absolute inset-0 z-0">
                 <Image
@@ -14,30 +14,30 @@ export default function Hero() {
                     sizes="100vw"
                 />
                 {/* Dark/Sage Gradient Overlay for Text Readability */}
-                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/20 md:from-black/80 md:via-black/50 md:to-transparent"></div>
             </div>
 
             {/* Content Container */}
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-center h-full pt-20">
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-12 flex flex-col justify-center h-full pt-12 md:pt-20">
                 <div className="max-w-2xl">
                     <div className="flex items-center gap-4 mb-6">
                         <div className="h-[1px] w-12 bg-zen-sage"></div>
-                        <p className="font-sans text-xs md:text-sm font-medium tracking-[0.3em] text-zen-sage-light uppercase">
+                        <p className="font-sans text-[10px] md:text-sm font-medium tracking-[0.3em] text-zen-sage-light uppercase">
                             Nook
                         </p>
                     </div>
 
-                    <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white leading-[1.1] mb-6 drop-shadow-lg">
+                    <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl xl:text-8xl text-white leading-[1.1] mb-4 md:mb-6 drop-shadow-lg">
                         El Ritual del <br />
                         <span className="italic text-zen-sage-light font-light">Silencio</span>
                     </h1>
 
-                    <p className="font-sans text-base md:text-lg text-gray-200 mb-10 max-w-lg leading-relaxed font-light">
+                    <p className="font-sans text-sm md:text-base lg:text-lg text-gray-200 mb-8 md:mb-10 max-w-lg leading-relaxed font-light">
                         Cosechas exclusivas de las montañas de Shizuoka y las mesetas de Etiopía. Encuentra tu Zen diario en cada taza.
                     </p>
 
                     <div className="flex flex-col sm:flex-row sm:items-center gap-6">
-                        <button className="bg-zen-sage hover:bg-white hover:text-zen-dark text-white font-sans text-xs font-bold tracking-[0.2em] uppercase px-10 py-5 rounded-sm transition-all duration-300 shadow-xl border border-transparent hover:border-zen-sage">
+                        <button className="bg-zen-sage hover:bg-white hover:text-zen-dark text-white font-sans text-xs font-bold tracking-[0.2em] uppercase px-8 py-4 md:px-10 md:py-5 rounded-sm transition-all duration-300 shadow-xl border border-transparent hover:border-zen-sage w-full sm:w-auto">
                             Descubrir la Colección
                         </button>
                     </div>

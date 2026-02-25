@@ -57,6 +57,7 @@ export default function CategoryFilterClient({ categories }: { categories: Categ
 
     // Estado para los acordeones abiertos (guardar IDs de categorías padre)
     const [openMenus, setOpenMenus] = useState<Set<number>>(new Set());
+    const [isCategoryOpen, setIsCategoryOpen] = useState(false);
 
     // Obtener parámetros actuales
     const currentCategory = searchParams.get("categoria") || "todas";
@@ -148,11 +149,19 @@ export default function CategoryFilterClient({ categories }: { categories: Categ
 
             {/* Layout Tienda: Sidebar + Productos irán en page.tsx pero aquí exportamos el Sidebar Filter */}
             <div className="w-full bg-zen-light/30 rounded-md p-4 border border-zen-sage/10 shadow-sm">
-                <h3 className="text-xs uppercase tracking-widest font-semibold text-zen-dark mb-4 border-b border-zen-sage/20 pb-2">
-                    Categorías
-                </h3>
+                <button
+                    onClick={() => setIsCategoryOpen(!isCategoryOpen)}
+                    className="flex items-center justify-between w-full md:cursor-default"
+                >
+                    <h3 className="text-xs uppercase tracking-widest font-semibold text-zen-dark">
+                        Categorías
+                    </h3>
+                    <span className={`md:hidden transform transition-transform duration-200 ${isCategoryOpen ? 'rotate-180' : ''}`}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m6 9 6 6 6-6" /></svg>
+                    </span>
+                </button>
 
-                <div className="flex flex-col gap-1 w-full">
+                <div className={`flex flex-col gap-1 w-full mt-3 md:mt-4 border-t border-zen-sage/20 pt-3 ${isCategoryOpen ? 'block' : 'hidden md:block'}`}>
                     <button
                         onClick={() => router.push(`/tienda?${createQueryString("categoria", "todas")}`)}
                         className={`text-left py-2 text-sm transition-colors ${currentCategory === "todas" ? "text-zen-dark font-semibold" : "text-zen-sage hover:text-zen-dark"}`}

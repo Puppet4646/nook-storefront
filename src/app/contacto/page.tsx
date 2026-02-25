@@ -7,13 +7,13 @@ export default function ContactoPage() {
             <Header />
 
             <main className="pt-32 pb-24">
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
+                <div className="max-w-7xl mx-auto px-4 md:px-6">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24">
 
                         {/* Contact Info */}
                         <div className="flex flex-col justify-center">
                             <span className="font-sans text-[10px] uppercase tracking-[0.3em] text-zen-sage mb-4 block">Conecta con Nook</span>
-                            <h1 className="font-serif text-5xl text-zen-dark mb-10 italic">Estamos aquí para acompañarte en tu ritual.</h1>
+                            <h1 className="font-serif text-3xl md:text-5xl text-zen-dark mb-6 md:mb-10 italic">Estamos aquí para acompañarte en tu ritual.</h1>
 
                             <div className="space-y-12">
                                 <div>
@@ -40,7 +40,7 @@ export default function ContactoPage() {
                         </div>
 
                         {/* Contact Form */}
-                        <div className="bg-white p-12 shadow-sm border border-zen-sage/5">
+                        <div className="bg-white p-6 md:p-12 shadow-sm border border-zen-sage/5">
                             <form className="space-y-8">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                     <div className="flex flex-col gap-2">

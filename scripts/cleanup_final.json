@@ -1,0 +1,154 @@
+{
+  "actions": [
+    {
+      "name": "AI Content Generator For Elementor",
+      "step": "deactivate",
+      "status": "ok"
+    },
+    {
+      "name": "AI Content Generator For Elementor",
+      "step": "delete",
+      "status": "ok"
+    },
+    {
+      "name": "Ally - Web Accessibility &amp; Usability",
+      "step": "deactivate",
+      "status": "ok"
+    },
+    {
+      "name": "Ally - Web Accessibility &amp; Usability",
+      "step": "delete",
+      "status": "ok"
+    },
+    {
+      "name": "Angie",
+      "step": "deactivate",
+      "status": "ok"
+    },
+    {
+      "name": "Angie",
+      "step": "delete",
+      "status": "ok"
+    },
+    {
+      "name": "Contact Form 7",
+      "step": "deactivate",
+      "status": "ok"
+    },
+    {
+      "name": "Contact Form 7",
+      "step": "delete",
+      "status": "ok"
+    },
+    {
+      "name": "Elementor",
+      "step": "deactivate",
+      "status": "ok"
+    },
+    {
+      "name": "Elementor",
+      "step": "delete",
+      "status": "ok"
+    },
+    {
+      "name": "Jetpack",
+      "step": "deactivate",
+      "status": "ok"
+    },
+    {
+      "name": "Jetpack",
+      "step": "delete",
+      "status": "ok"
+    },
+    {
+      "name": "Klaviyo",
+      "step": "deactivate",
+      "status": "ok"
+    },
+    {
+      "name": "Klaviyo",
+      "step": "delete",
+      "status": "ok"
+    },
+    {
+      "name": "MC4WP: Mailchimp for WordPress",
+      "step": "deactivate",
+      "status": "ok"
+    },
+    {
+      "name": "MC4WP: Mailchimp for WordPress",
+      "step": "delete",
+      "status": "ok"
+    },
+    {
+      "name": "Reddit for WooCommerce",
+      "step": "deactivate",
+      "status": "ok"
+    },
+    {
+      "name": "Reddit for WooCommerce",
+      "step": "delete",
+      "status": "ok"
+    },
+    {
+      "name": "Snapchat for WooCommerce",
+      "step": "deactivate",
+      "status": "ok"
+    },
+    {
+      "name": "Snapchat for WooCommerce",
+      "step": "delete",
+      "status": "ok"
+    },
+    {
+      "name": "Woodmart AI Bridge",
+      "step": "deactivate",
+      "status": "ok"
+    },
+    {
+      "name": "Woodmart AI Bridge",
+      "step": "delete",
+      "status": "ok"
+    },
+    {
+      "name": "Woodmart Core",
+      "step": "deactivate",
+      "status": "ok"
+    },
+    {
+      "name": "Woodmart Core",
+      "step": "delete",
+      "status": "ok"
+    },
+    {
+      "name": "WP Super Cache",
+      "step": "deactivate",
+      "status": "ok"
+    },
+    {
+      "name": "WP Super Cache",
+      "step": "delete",
+      "status": "<p>Ha habido un error crítico en esta web.</p><p><a href=\"https://wordpress.org/documentation/article/faq-troubleshooting/\">Aprende más sobre el diagnóstico de WordPress.</a></p>"
+    }
+  ],
+  "remaining": {
+    "active": [
+      "Facebook for WooCommerce",
+      "Google for WooCommerce",
+      "Image Optimizer – Compress, Resize and Optimize Images",
+      "Nook Bridge",
+      "Safe SVG",
+      "Security Optimizer",
+      "Speed Optimizer",
+      "WooCommerce",
+      "WooCommerce.com Update Manager",
+      "WooCommerce Legacy REST API",
+      "WooCommerce PayPal Payments",
+      "WooPayments"
+    ],
+    "inactive": [
+      "WP Super Cache"
+    ],
+    "totalActive": 12
+  }
+}

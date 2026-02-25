@@ -59,10 +59,10 @@ export default function FAQPage() {
             <Header />
 
             <main className="pt-32 pb-24">
-                <div className="max-w-3xl mx-auto px-6">
-                    <div className="text-center mb-20">
+                <div className="max-w-3xl mx-auto px-4 md:px-6">
+                    <div className="text-center mb-12 md:mb-20">
                         <span className="font-sans text-[10px] uppercase tracking-[0.3em] text-zen-sage mb-4 block">Preguntas Frecuentes</span>
-                        <h1 className="font-serif text-5xl text-zen-dark italic">Resolviendo tus dudas.</h1>
+                        <h1 className="font-serif text-3xl md:text-5xl text-zen-dark italic">Resolviendo tus dudas.</h1>
                     </div>
 
                     <div className="space-y-16">
@@ -78,7 +78,7 @@ export default function FAQPage() {
                         ))}
                     </div>
 
-                    <div className="mt-24 p-12 bg-zen-dark text-white text-center rounded-sm shadow-2xl">
+                    <div className="mt-16 md:mt-24 p-8 md:p-12 bg-zen-dark text-white text-center rounded-sm shadow-2xl">
                         <h2 className="font-serif text-2xl italic mb-4">¿No encuentras lo que buscas?</h2>
                         <p className="font-sans text-xs text-white/60 mb-8 uppercase tracking-widest">Estamos encantados de hablar contigo.</p>
                         <a href="/contacto" className="inline-block border border-white/30 px-10 py-4 font-sans text-[10px] uppercase tracking-widest hover:bg-white hover:text-zen-dark transition-all">Ir a Contacto</a>

@@ -1,0 +1,192 @@
+{
+  "results": [
+    {
+      "name": "woodmart-core",
+      "step": "deactivate",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "woodmart-core",
+      "step": "delete",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "woodmart-ai-bridge",
+      "step": "deactivate",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "woodmart-ai-bridge",
+      "step": "delete",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "elementor",
+      "step": "deactivate",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "elementor",
+      "step": "delete",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "ai-auto-content-generator-for-elementor",
+      "step": "deactivate",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "ai-auto-content-generator-for-elementor",
+      "step": "delete",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "angie",
+      "step": "deactivate",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "angie",
+      "step": "delete",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "jetpack",
+      "step": "deactivate",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "jetpack",
+      "step": "delete",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "klaviyo",
+      "step": "deactivate",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "klaviyo",
+      "step": "delete",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "mailchimp-for-wp",
+      "step": "deactivate",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "mailchimp-for-wp",
+      "step": "delete",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "reddit-for-woocommerce",
+      "step": "deactivate",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "reddit-for-woocommerce",
+      "step": "delete",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "snapchat-for-woocommerce",
+      "step": "deactivate",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "snapchat-for-woocommerce",
+      "step": "delete",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "pojo-accessibility",
+      "step": "deactivate",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "pojo-accessibility",
+      "step": "delete",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "contact-form-7",
+      "step": "deactivate",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "contact-form-7",
+      "step": "delete",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "wp-super-cache",
+      "step": "deactivate",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    },
+    {
+      "name": "wp-super-cache",
+      "step": "delete",
+      "status": "error",
+      "msg": "Plugin no encontrado."
+    }
+  ],
+  "remaining": {
+    "active": [
+      "AI Content Generator For Elementor",
+      "Angie",
+      "Elementor",
+      "Facebook for WooCommerce",
+      "Google for WooCommerce",
+      "Image Optimizer – Compress, Resize and Optimize Images",
+      "Jetpack",
+      "Klaviyo",
+      "MC4WP: Mailchimp for WordPress",
+      "Nook Bridge",
+      "Reddit for WooCommerce",
+      "Safe SVG",
+      "Security Optimizer",
+      "Snapchat for WooCommerce",
+      "Speed Optimizer",
+      "WooCommerce",
+      "WooCommerce.com Update Manager",
+      "WooCommerce Legacy REST API",
+      "WooCommerce PayPal Payments",
+      "Woodmart AI Bridge",
+      "Woodmart Core",
+      "WooPayments"
+    ],
+    "inactive": [
+      "Ally - Web Accessibility &amp; Usability",
+      "Contact Form 7",
+      "WP Super Cache"
+    ],
+    "totalActive": 22
+  }
+}

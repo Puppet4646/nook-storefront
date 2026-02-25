@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@import "tailwindcss";
-
 @theme inline {
   --color-zen-bone: #FAF9F6;
   --color-zen-dark: #2C352D;
@@ -12,7 +10,31 @@
   --font-serif: var(--font-playfair);
 }
 
+/* Mobile-first base styles */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   background-color: var(--color-zen-bone);
   color: var(--color-zen-dark);
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+}
+
+/* Improve touch targets globally */
+@media (hover: none) and (pointer: coarse) {
+  button, a, select, input, textarea {
+    min-height: 44px;
+  }
+}
+
+/* Hide scrollbar for swipe areas */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

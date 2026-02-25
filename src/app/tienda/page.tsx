@@ -67,18 +67,18 @@ export default async function TiendaPage({
     }
 
     return (
-        <main className="min-h-screen bg-zen-bone pt-32 pb-16">
+        <main className="min-h-screen bg-zen-bone pt-24 md:pt-32 pb-16">
 
             {/* Editorial Header */}
-            <section className="px-6 pb-20 text-center max-w-4xl mx-auto">
-                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-zen-dark mb-6">Nuestra Colección</h1>
+            <section className="px-4 md:px-6 pb-12 md:pb-20 text-center max-w-4xl mx-auto">
+                <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-zen-dark mb-4 md:mb-6">Nuestra Colección</h1>
                 <p className="text-zen-sage text-sm uppercase tracking-[0.2em] font-medium font-sans max-w-lg mx-auto leading-relaxed">
                     Calidad Premium Artesanal para elevar cada uno de tus rituales diarios.
                 </p>
             </section>
 
             {/* Layout Principal: Sidebar Izquierdo + Grilla de Productos Derecha */}
-            <section className="px-6 mb-12 max-w-7xl mx-auto">
+            <section className="px-4 md:px-6 mb-12 max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row gap-8 items-start">
 
                     {/* Sidebar Categorías (25% ancho en Desktop) */}

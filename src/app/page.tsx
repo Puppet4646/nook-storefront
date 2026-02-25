@@ -18,19 +18,19 @@ export default async function Home() {
       <Storytelling />
 
       {/* Latest Products Section */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
-        <div className="flex justify-between items-end mb-12">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24">
+        <div className="flex justify-between items-end mb-8 md:mb-12">
           <div>
             <span className="font-sans text-[10px] uppercase tracking-[0.3em] text-zen-sage mb-2 block">Selección de Temporada</span>
-            <h2 className="font-serif text-3xl text-zen-dark italic">Novedades en Tienda</h2>
+            <h2 className="font-serif text-2xl md:text-3xl text-zen-dark italic">Novedades en Tienda</h2>
           </div>
-          <Link href="/tienda" className="font-sans text-[10px] uppercase tracking-[0.2em] text-zen-sage hover:text-zen-dark transition-colors border-b border-zen-sage/20 pb-1">Ver Catálogo</Link>
+          <Link href="/tienda" className="font-sans text-[10px] uppercase tracking-[0.2em] text-zen-sage hover:text-zen-dark transition-colors border-b border-zen-sage/20 pb-1 hidden sm:inline">Ver Catálogo</Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-12">
           {products.slice(0, 3).map((p: any) => (
             <Link key={p.id} href={`/producto/${p.slug}`} className="group cursor-pointer block">
-              <div className="relative aspect-[4/5] overflow-hidden bg-[#F5F5F0] mb-6">
+              <div className="relative aspect-[4/5] overflow-hidden bg-[#F5F5F0] mb-3 md:mb-6">
                 <ProductImage
                   src={p.images?.[0]?.src}
                   alt={p.name}
@@ -38,7 +38,7 @@ export default async function Home() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-              <h3 className="font-serif text-lg text-zen-dark mb-1 transition-colors group-hover:text-zen-sage">{p.name}</h3>
+              <h3 className="font-serif text-sm md:text-lg text-zen-dark mb-1 transition-colors group-hover:text-zen-sage line-clamp-2">{p.name}</h3>
               <div className="font-sans text-xs text-zen-sage tracking-widest uppercase" dangerouslySetInnerHTML={{ __html: p.price_html }} />
             </Link>
           ))}
@@ -46,15 +46,15 @@ export default async function Home() {
       </section>
 
       {/* Journal / Blog Preview Section */}
-      <section className="bg-[#FAF9F6] py-24 border-y border-zen-sage/10">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
+      <section className="bg-[#FAF9F6] py-16 md:py-24 border-y border-zen-sage/10">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <div className="text-center mb-10 md:mb-16">
             <span className="font-sans text-[10px] uppercase tracking-[0.3em] text-zen-sage mb-2 block">Lectura & Cultura</span>
-            <h2 className="font-serif text-4xl text-zen-dark">Nook Journal</h2>
+            <h2 className="font-serif text-3xl md:text-4xl text-zen-dark">Nook Journal</h2>
             <div className="w-12 h-[1px] bg-zen-sage/30 mx-auto mt-6"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-12">
             {latestPosts.map((post: any) => {
               const title = post.title.rendered.toLowerCase();
               let imageUrl = post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
@@ -83,7 +83,7 @@ export default async function Home() {
             })}
           </div>
 
-          <div className="mt-16 text-center">
+          <div className="mt-10 md:mt-16 text-center">
             <Link href="/blog" className="inline-block font-sans text-[10px] uppercase tracking-[0.2em] text-zen-sage hover:text-zen-dark transition-all border border-zen-sage/30 px-8 py-4 hover:bg-zen-sage/5">Explorar Journal</Link>
           </div>
         </div>

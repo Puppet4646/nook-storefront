@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
-        <footer className="bg-zen-dark text-zen-bone px-6 pt-24 pb-12 w-full mt-16">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-16">
+        <footer className="bg-zen-dark text-zen-bone px-4 md:px-6 pt-16 md:pt-24 pb-10 md:pb-12 w-full mt-10 md:mt-16">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-8 mb-10 md:mb-16">
 
                 {/* Brand & Newsletter Column */}
                 <div className="md:col-span-2">

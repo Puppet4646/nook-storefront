@@ -45,7 +45,7 @@ export default function ProductGrid({ products }: { products: WooCommerceProduct
     }
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-12 px-6 max-w-7xl mx-auto mb-24">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-8 md:gap-x-6 md:gap-y-12 px-4 md:px-6 max-w-7xl mx-auto mb-24">
             {products.map((product) => {
                 const initialImageUrl = product.images && product.images.length > 0
                     ? product.images[0].src
@@ -58,14 +58,14 @@ export default function ProductGrid({ products }: { products: WooCommerceProduct
 
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
 
-                            <button className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-sm p-2 rounded-none opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center border border-zen-sage/20 text-zen-dark hover:bg-zen-sage hover:text-white shadow-sm">
-                                <span className="font-sans text-[10px] tracking-[0.2em] uppercase px-3 py-1 font-medium">Ver Detalle</span>
+                            <button className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-sm p-2 rounded-none md:opacity-0 md:translate-y-2 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center border border-zen-sage/20 text-zen-dark hover:bg-zen-sage hover:text-white shadow-sm">
+                                <span className="font-sans text-[9px] md:text-[10px] tracking-[0.2em] uppercase px-2 md:px-3 py-1 font-medium">Ver Detalle</span>
                             </button>
                         </Link>
 
-                        <div className="flex flex-col gap-1 items-center text-center mt-2 px-1">
+                        <div className="flex flex-col gap-0.5 md:gap-1 items-center text-center mt-1 md:mt-2 px-1">
                             <Link href={`/producto/${product.slug}`}>
-                                <h3 className="font-serif text-base text-zen-dark group-hover:text-zen-sage transition-colors line-clamp-2">
+                                <h3 className="font-serif text-sm md:text-base text-zen-dark group-hover:text-zen-sage transition-colors line-clamp-2">
                                     {product.name}
                                 </h3>
                             </Link>

@@ -1,0 +1,127 @@
+[
+  {
+    "name": "AI Content Generator For Elementor",
+    "plugin": "ai-auto-content-generator-for-elementor/ai-auto-content-generator-for-elementor",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/ai-auto-content-generator-for-elementor/ai-auto-content-generator-for-elementor"
+  },
+  {
+    "name": "Ally - Web Accessibility &amp; Usability",
+    "plugin": "pojo-accessibility/pojo-accessibility",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/pojo-accessibility/pojo-accessibility"
+  },
+  {
+    "name": "Angie",
+    "plugin": "angie/angie",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/angie/angie"
+  },
+  {
+    "name": "Contact Form 7",
+    "plugin": "contact-form-7/wp-contact-form-7",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/contact-form-7/wp-contact-form-7"
+  },
+  {
+    "name": "Elementor",
+    "plugin": "elementor/elementor",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/elementor/elementor"
+  },
+  {
+    "name": "Facebook for WooCommerce",
+    "plugin": "facebook-for-woocommerce/facebook-for-woocommerce",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/facebook-for-woocommerce/facebook-for-woocommerce"
+  },
+  {
+    "name": "Google for WooCommerce",
+    "plugin": "google-listings-and-ads/google-listings-and-ads",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/google-listings-and-ads/google-listings-and-ads"
+  },
+  {
+    "name": "Image Optimizer – Compress, Resize and Optimize Images",
+    "plugin": "image-optimization/image-optimization",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/image-optimization/image-optimization"
+  },
+  {
+    "name": "Jetpack",
+    "plugin": "jetpack/jetpack",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/jetpack/jetpack"
+  },
+  {
+    "name": "Klaviyo",
+    "plugin": "klaviyo/klaviyo",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/klaviyo/klaviyo"
+  },
+  {
+    "name": "MC4WP: Mailchimp for WordPress",
+    "plugin": "mailchimp-for-wp/mailchimp-for-wp",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/mailchimp-for-wp/mailchimp-for-wp"
+  },
+  {
+    "name": "Nook Bridge",
+    "plugin": "nook-bridge/nook-bridge",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/nook-bridge/nook-bridge"
+  },
+  {
+    "name": "Reddit for WooCommerce",
+    "plugin": "reddit-for-woocommerce/reddit-for-woocommerce",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/reddit-for-woocommerce/reddit-for-woocommerce"
+  },
+  {
+    "name": "Safe SVG",
+    "plugin": "safe-svg/safe-svg",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/safe-svg/safe-svg"
+  },
+  {
+    "name": "Security Optimizer",
+    "plugin": "sg-security/sg-security",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/sg-security/sg-security"
+  },
+  {
+    "name": "Snapchat for WooCommerce",
+    "plugin": "snapchat-for-woocommerce/snapchat-for-woocommerce",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/snapchat-for-woocommerce/snapchat-for-woocommerce"
+  },
+  {
+    "name": "Speed Optimizer",
+    "plugin": "sg-cachepress/sg-cachepress",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/sg-cachepress/sg-cachepress"
+  },
+  {
+    "name": "WooCommerce",
+    "plugin": "woocommerce/woocommerce",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/woocommerce/woocommerce"
+  },
+  {
+    "name": "WooCommerce.com Update Manager",
+    "plugin": "woo-update-manager/woo-update-manager",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/woo-update-manager/woo-update-manager"
+  },
+  {
+    "name": "WooCommerce Legacy REST API",
+    "plugin": "woocommerce-legacy-rest-api/woocommerce-legacy-rest-api",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/woocommerce-legacy-rest-api/woocommerce-legacy-rest-api"
+  },
+  {
+    "name": "WooCommerce PayPal Payments",
+    "plugin": "woocommerce-paypal-payments/woocommerce-paypal-payments",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/woocommerce-paypal-payments/woocommerce-paypal-payments"
+  },
+  {
+    "name": "Woodmart AI Bridge",
+    "plugin": "woodmart-ai-bridge/woodmart-ai-bridge",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/woodmart-ai-bridge/woodmart-ai-bridge"
+  },
+  {
+    "name": "Woodmart Core",
+    "plugin": "woodmart-core/woodmart-core",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/woodmart-core/woodmart-core"
+  },
+  {
+    "name": "WooPayments",
+    "plugin": "woocommerce-payments/woocommerce-payments",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/woocommerce-payments/woocommerce-payments"
+  },
+  {
+    "name": "WP Super Cache",
+    "plugin": "wp-super-cache/wp-cache",
+    "self": "https://nookspecialty.es/wp-json/wp/v2/plugins/wp-super-cache/wp-cache"
+  }
+]

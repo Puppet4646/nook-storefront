@@ -1,0 +1,106 @@
+{
+  "active": [
+    {
+      "name": "AI Content Generator For Elementor",
+      "plugin": "ai-auto-content-generator-for-elementor/ai-auto-content-generator-for-elementor"
+    },
+    {
+      "name": "Angie",
+      "plugin": "angie/angie"
+    },
+    {
+      "name": "Elementor",
+      "plugin": "elementor/elementor"
+    },
+    {
+      "name": "Facebook for WooCommerce",
+      "plugin": "facebook-for-woocommerce/facebook-for-woocommerce"
+    },
+    {
+      "name": "Google for WooCommerce",
+      "plugin": "google-listings-and-ads/google-listings-and-ads"
+    },
+    {
+      "name": "Image Optimizer – Compress, Resize and Optimize Images",
+      "plugin": "image-optimization/image-optimization"
+    },
+    {
+      "name": "Jetpack",
+      "plugin": "jetpack/jetpack"
+    },
+    {
+      "name": "Klaviyo",
+      "plugin": "klaviyo/klaviyo"
+    },
+    {
+      "name": "MC4WP: Mailchimp for WordPress",
+      "plugin": "mailchimp-for-wp/mailchimp-for-wp"
+    },
+    {
+      "name": "Nook Bridge",
+      "plugin": "nook-bridge/nook-bridge"
+    },
+    {
+      "name": "Reddit for WooCommerce",
+      "plugin": "reddit-for-woocommerce/reddit-for-woocommerce"
+    },
+    {
+      "name": "Safe SVG",
+      "plugin": "safe-svg/safe-svg"
+    },
+    {
+      "name": "Security Optimizer",
+      "plugin": "sg-security/sg-security"
+    },
+    {
+      "name": "Snapchat for WooCommerce",
+      "plugin": "snapchat-for-woocommerce/snapchat-for-woocommerce"
+    },
+    {
+      "name": "Speed Optimizer",
+      "plugin": "sg-cachepress/sg-cachepress"
+    },
+    {
+      "name": "WooCommerce",
+      "plugin": "woocommerce/woocommerce"
+    },
+    {
+      "name": "WooCommerce.com Update Manager",
+      "plugin": "woo-update-manager/woo-update-manager"
+    },
+    {
+      "name": "WooCommerce Legacy REST API",
+      "plugin": "woocommerce-legacy-rest-api/woocommerce-legacy-rest-api"
+    },
+    {
+      "name": "WooCommerce PayPal Payments",
+      "plugin": "woocommerce-paypal-payments/woocommerce-paypal-payments"
+    },
+    {
+      "name": "Woodmart AI Bridge",
+      "plugin": "woodmart-ai-bridge/woodmart-ai-bridge"
+    },
+    {
+      "name": "Woodmart Core",
+      "plugin": "woodmart-core/woodmart-core"
+    },
+    {
+      "name": "WooPayments",
+      "plugin": "woocommerce-payments/woocommerce-payments"
+    }
+  ],
+  "inactive": [
+    {
+      "name": "Ally - Web Accessibility &amp; Usability",
+      "plugin": "pojo-accessibility/pojo-accessibility"
+    },
+    {
+      "name": "Contact Form 7",
+      "plugin": "contact-form-7/wp-contact-form-7"
+    },
+    {
+      "name": "WP Super Cache",
+      "plugin": "wp-super-cache/wp-cache"
+    }
+  ]
+}

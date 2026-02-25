@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-[#FAF9F6] text-[#2C352D] flex flex-col min-h-screen pt-20`}
+        className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-[#FAF9F6] text-[#2C352D] flex flex-col min-h-screen pt-16 md:pt-20`}
       >
         <Header />
         <div className="flex-grow">

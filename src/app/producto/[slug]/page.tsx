@@ -41,7 +41,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             <main className="relative lg:flex lg:flex-row-reverse">
 
                 {/* Product Info Panel */}
-                <div className="lg:w-1/2 px-6 pt-32 pb-16 lg:pt-48 lg:px-20 flex flex-col justify-center">
+                <div className="lg:w-1/2 px-5 pt-6 pb-12 lg:pt-48 lg:px-20 flex flex-col justify-center">
                     <div className="max-w-xl">
                         <div className="flex items-center gap-4 mb-6">
                             <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-zen-sage">Origin: Yunnan</span>
@@ -49,7 +49,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                             <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-zen-sage">No. {product.id.toString().slice(-3)}</span>
                         </div>
 
-                        <h1 className="font-serif text-5xl lg:text-7xl mb-6 leading-[1.1] text-zen-dark">
+                        <h1 className="font-serif text-3xl md:text-5xl lg:text-7xl mb-4 md:mb-6 leading-[1.1] text-zen-dark">
                             {product.name}
                         </h1>
 
@@ -60,12 +60,12 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
                         <div className="prose prose-sm prose-zen mb-12" dangerouslySetInnerHTML={{ __html: product.short_description }} />
 
-                        <div className="flex flex-col sm:flex-row gap-4 mb-20">
+                        <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-12 md:mb-20">
                             <AddToCartButton product={product} />
                         </div>
 
                         {/* Quick Prep Icons */}
-                        <div className="grid grid-cols-3 gap-8 py-8 border-y border-zen-sage/10">
+                        <div className="grid grid-cols-3 gap-4 md:gap-8 py-6 md:py-8 border-y border-zen-sage/10">
                             <div className="text-center">
                                 <span className="block text-[10px] uppercase tracking-widest text-zen-sage mb-2">Temp</span>
                                 <span className="text-xl font-serif text-zen-dark">{prepTemp || "95ºC"}</span>
@@ -89,10 +89,10 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             </main>
 
             {/* Sensory Experience (Full Width Section) */}
-            <section className="bg-zen-dark text-zen-bone py-32 lg:py-48 px-6">
+            <section className="bg-zen-dark text-zen-bone py-16 md:py-32 lg:py-48 px-5 md:px-6">
                 <div className="max-w-4xl mx-auto text-center">
                     <span className="font-sans text-[10px] uppercase tracking-[0.5em] mb-12 block opacity-40">Sensory Experience</span>
-                    <h2 className="font-serif text-4xl lg:text-6xl mb-12 italic leading-tight">
+                    <h2 className="font-serif text-3xl md:text-4xl lg:text-6xl mb-8 md:mb-12 italic leading-tight">
                         &quot;{tastingNotes || "Una sinfonía de matices que despiertan el espíritu con cada sorbo."}&quot;
                     </h2>
                     <div className="w-24 h-px bg-zen-bone/20 mx-auto mb-12" />
@@ -103,11 +103,11 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             </section>
 
             {/* Narrative / Context Section */}
-            <section className="py-32 lg:py-48 px-6 bg-[#F9F9F7]">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <section className="py-16 md:py-32 lg:py-48 px-5 md:px-6 bg-[#F9F9F7]">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 items-center">
                     <div className="order-2 lg:order-1">
                         <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-zen-sage mb-8 block">The Narrative</span>
-                        <h3 className="font-serif text-4xl lg:text-5xl mb-8 text-zen-dark leading-snug">
+                        <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-6 md:mb-8 text-zen-dark leading-snug">
                             Historias guardadas en cada hebra
                         </h3>
                         <div className="prose prose-lg prose-zen" dangerouslySetInnerHTML={{ __html: product.description }} />
@@ -129,10 +129,10 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
             {/* Related Products */}
             {relatedProducts.length > 0 && (
-                <section className="py-32 bg-white">
+                <section className="py-16 md:py-32 bg-white">
                     <div className="max-w-7xl mx-auto px-6">
-                        <div className="flex items-baseline justify-between mb-16">
-                            <h2 className="font-serif text-4xl text-zen-dark italic">Quizás desees probar...</h2>
+                        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-10 md:mb-16 gap-4">
+                            <h2 className="font-serif text-2xl md:text-4xl text-zen-dark italic">Quizás desees probar...</h2>
                             <Link href="/tienda" className="font-sans text-[10px] uppercase tracking-[0.3em] opacity-40 hover:opacity-100 transition-opacity">Ver todo</Link>
                         </div>
                         <ProductGrid products={relatedProducts} />
