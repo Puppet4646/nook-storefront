@@ -39,7 +39,7 @@ export default async function Home() {
 
             return (
               <Link key={p.id} href={`/producto/${p.slug}`} className="group cursor-pointer block">
-                <div className="relative aspect-[4/5] overflow-hidden bg-[#F5F5F0] mb-4 md:mb-6 rounded-sm">
+                <div className="relative aspect-4/5 overflow-hidden bg-[#F5F5F0] mb-4 md:mb-6 rounded-sm">
                   <ProductImage
                     src={p.images?.[0]?.src}
                     alt={p.name}
@@ -105,10 +105,10 @@ export default async function Home() {
               let imageUrl = post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
 
               if (!imageUrl) {
-                if (title.includes("matcha")) imageUrl = "https://images.unsplash.com/photo-1582793988951-9aed5509eb97?auto=format&fit=crop&q=80&w=800";
-                else if (title.includes("temperatura") || title.includes("preparación")) imageUrl = "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&q=80&w=800";
-                else if (title.includes("terroir") || title.includes("origen")) imageUrl = "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&q=80&w=800";
-                else imageUrl = "https://images.unsplash.com/photo-1544787210-2213d84ad96b?auto=format&fit=crop&q=80&w=800";
+                if (title.includes("matcha")) imageUrl = "/images/blog-matcha.jpg";
+                else if (title.includes("temperatura") || title.includes("preparación")) imageUrl = "/images/blog-preparation.jpg";
+                else if (title.includes("terroir") || title.includes("origen")) imageUrl = "/images/blog-terroir.jpg";
+                else imageUrl = "/images/blog-generic.jpg";
               }
 
               return (

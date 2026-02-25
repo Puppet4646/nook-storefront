@@ -1,0 +1,75 @@
+====================================================================
+NOOK STOREFRONT — IMAGE PROMPTS
+====================================================================
+Copia cada prompt y pégalo en tu IA de generación de imágenes.
+Añade --ar 16:9 o --ar 3:4 si usas Midjourney.
+
+====================================================================
+HERO (3 imágenes — paisaje, 2000×1200px mínimo)
+====================================================================
+
+--- 1. HERO SLIDE 1: "El Ritual del Silencio" (té/ceremonia) ---
+
+A serene Japanese tea ceremony setup photographed from above at a 45-degree angle. A dark ceramic chawan (tea bowl) with vibrant green matcha in the center, surrounded by a bamboo chasen whisk, a small wooden tea scoop, and scattered loose tea leaves on a dark slate surface. Soft warm natural light from the left side. Muted earth tones: deep forest green, charcoal, warm beige. Editorial photography style, shallow depth of field, premium feel. Landscape orientation 16:9 ratio. No text, no people's faces.
+
+
+--- 2. HERO SLIDE 2: "Café de Origen" (especialidad café) ---
+
+A dramatic close-up of freshly roasted specialty coffee beans spilling from a rustic ceramic bowl onto a dark wooden surface. Some beans are whole, others cracked showing the golden interior. Steam or gentle smoke rising subtly. Warm amber and brown tones with deep shadows. A small vintage brass coffee scoop visible. Moody editorial lighting from above-right. Landscape orientation 16:9 ratio. Premium artisan feel, no text, no people.
+
+
+--- 3. HERO SLIDE 3: "Matcha Premium" (matcha ceremonial) ---
+
+A minimalist overhead shot of vibrant green matcha powder in a small stone bowl, with a traditional bamboo chasen whisk resting beside it, on a clean matte beige/cream linen surface. A delicate ceramic cup of prepared matcha latte nearby with a beautiful foam pattern. Fresh green tea leaves scattered artfully. Bright, soft, diffused natural daylight. Color palette: vivid emerald green, warm cream, light sage. Clean, airy, Japanese minimalism. Landscape orientation 16:9. No text.
+
+
+====================================================================
+CATEGORÍAS (3 imágenes — retrato, 800×1000px mínimo)
+====================================================================
+
+--- 4. CATEGORÍA: "Té Matcha" ---
+
+Vertical close-up of a traditional Japanese matcha preparation: a hand holding a bamboo chasen whisk creating a frothy layer in a dark ceramic chawan bowl. The matcha is vibrant emerald green. Background is softly blurred dark wood. Warm natural side lighting. Moody, intimate, artisanal atmosphere. Portrait orientation 3:4 ratio. Colors: deep green, dark charcoal, warm highlights. No text.
+
+
+--- 5. CATEGORÍA: "Té Negro" ---
+
+Vertical shot of loose-leaf black tea leaves arranged beautifully in a rustic ceramic spoon or small clay dish, placed on a dark textured linen cloth. Some golden-tipped leaves visible among the dark ones. A small glass cup of brewed amber-red tea in the background, slightly out of focus with steam rising. Warm, cozy mood lighting. Portrait orientation 3:4 ratio. Colors: deep brown, amber gold, dark charcoal. No text.
+
+
+--- 6. CATEGORÍA: "Café de Especialidad" ---
+
+Vertical shot of a professional latte art being poured into a wide ceramic cup — a beautiful rosetta or tulip pattern forming in the crema. Shot from slightly above, showing the barista's hand holding a stainless steel milk pitcher. Background is a warm, blurred minimalist café counter. Soft natural light. Portrait orientation 3:4 ratio. Colors: warm cream, espresso brown, soft beige. No text.
+
+
+====================================================================
+STORYTELLING (1 imagen — retrato, 1000×1300px mínimo)
+====================================================================
+
+--- 7. BLOQUE "Nuestra Filosofía" ---
+
+An editorial portrait-style photograph of hands carefully cupping dried tea leaves over a wooden sorting table. The hands are weathered but gentle, suggesting artisan craftsmanship. Soft golden light from a window to the side. Shallow depth of field with tea plantation or wooden shelves blurred in the background. Earth tones: warm sepia, sage green, natural wood. Artistic, editorial magazine quality. Portrait orientation 3:4. Conveys patience, care, and tradition. No faces visible, just hands. No text.
+
+
+====================================================================
+BLOG FALLBACKS (4 imágenes — paisaje, 800×450px mínimo)
+====================================================================
+
+--- 8. BLOG FALLBACK: Matcha ---
+
+A bright, airy flat-lay of matcha-making ingredients on a white marble surface: a bowl of sifted matcha powder, a bamboo whisk, a small ceramic cup of prepared matcha, and a few fresh green tea leaves. Clean, modern, Instagram-friendly styling. Soft overhead natural light. Landscape 16:9 ratio. Colors: vibrant green, white, light gray. Lifestyle editorial feel. No text.
+
+
+--- 9. BLOG FALLBACK: Preparación / Temperatura ---
+
+A close-up of a handmade ceramic gooseneck kettle pouring hot water over tea leaves in a glass teapot. Steam rising elegantly. The tea leaves are unfurling in the hot water, showing their expansion. Background is a softly blurred minimalist kitchen or tea station. Warm, inviting tones: amber, sage green, natural wood. Landscape 16:9 ratio. No text.
+
+
+--- 10. BLOG FALLBACK: Origen / Terroir ---
+
+An aerial landscape photograph of terraced tea plantations on misty green hillsides at dawn. Rows of bright green tea bushes covering rolling hills, with soft clouds or morning fog weaving between them. A small path visible between the terraces. Colors: emerald green, misty white, soft golden sunrise light. Ethereal, peaceful, vast. Landscape 16:9 ratio. Nature documentary quality. No text, no people.
+
+
+--- 11. BLOG FALLBACK: Genérico ---
+
+A cozy, minimalist still life of a single ceramic cup of tea on a wooden tray, placed on a linen cloth near a window. Soft morning light streaming in, creating gentle shadows. A small open book and a sprig of dried herbs beside the cup. The tea has a warm amber color. Hygge/wabi-sabi aesthetic. Colors: warm beige, sage green, soft brown, cream. Landscape 16:9 ratio. Calm, contemplative mood. No text.

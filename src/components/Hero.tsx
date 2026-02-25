@@ -6,7 +6,7 @@ import { useState, useEffect, useCallback } from "react";
 
 const slides = [
     {
-        image: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?q=80&w=2000&auto=format&fit=crop",
+        image: "/images/hero-tea-ceremony.jpg",
         alt: "Ritual del té Zen verde oscuro",
         kicker: "Nook",
         headline: (
@@ -21,7 +21,7 @@ const slides = [
         href: "/tienda",
     },
     {
-        image: "https://images.unsplash.com/photo-1559525839-b184a4d698c7?q=80&w=2000&auto=format&fit=crop",
+        image: "/images/hero-coffee-beans.jpg",
         alt: "Granos de café de especialidad tostados artesanalmente",
         kicker: "Especialidad",
         headline: (
@@ -36,7 +36,7 @@ const slides = [
         href: "/tienda",
     },
     {
-        image: "https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?q=80&w=2000&auto=format&fit=crop",
+        image: "/images/hero-matcha.jpg",
         alt: "Matcha ceremonial japonés premium",
         kicker: "Ceremonial",
         headline: (

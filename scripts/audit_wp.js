@@ -1,5 +1,7 @@
-require('dotenv').config({ path: '.env.local' });
-const WooCommerceRestApi = require("@woocommerce/woocommerce-rest-api").default;
+import dotenv from 'dotenv';
+import WooCommerceRestApi from '@woocommerce/woocommerce-rest-api';
+
+dotenv.config({ path: '.env.local' });
 
 const WC_URL = process.env.NEXT_PUBLIC_WC_URL?.trim();
 const WC_KEY = process.env.WC_CONSUMER_KEY?.trim();
@@ -123,7 +125,7 @@ async function audit() {
                 methods.data.forEach(m => {
                     console.log(`  - ${m.title} (${m.method_id}) [${m.enabled ? "ENABLED" : "disabled"}]`);
                 });
-            } catch (e) { }
+            } catch { }
         }
     } catch (e) {
         console.error("Shipping error:", e.message);
