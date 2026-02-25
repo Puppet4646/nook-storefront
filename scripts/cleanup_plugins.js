@@ -1,6 +1,7 @@
-require('dotenv').config({ path: '.env.local' });
-const axios = require('axios');
-const fs = require('fs');
+import dotenv from 'dotenv';
+dotenv.config({ path: '.env.local' });
+import axios from 'axios';
+import fs from 'fs';
 
 const WP_URL = process.env.NEXT_PUBLIC_WC_URL?.trim();
 const auth = Buffer.from(

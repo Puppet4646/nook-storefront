@@ -1,6 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-const https = require('https');
+import fs from 'fs';
+import path from 'path';
+import https from 'https';
 
 const username = 'Naturculture';
 const password = 'I2I9 o2Z8 pE5L 8hhv NPV8 fjt7';
@@ -33,7 +33,7 @@ async function uploadImage(filePath) {
                 try {
                     const json = JSON.parse(body);
                     resolve(json);
-                } catch (e) {
+                } catch {
                     reject(new Error(body));
                 }
             });

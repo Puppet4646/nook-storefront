@@ -31,7 +31,7 @@ export default function Footer() {
                     <ul className="flex flex-col gap-4 font-sans font-light text-sm text-zen-bone/80">
                         <li><Link href="/tienda" className="hover:text-white transition-colors">Tienda</Link></li>
                         <li><Link href="/nosotros" className="hover:text-white transition-colors">Nuestra Filosofía</Link></li>
-                        <li><Link href="/blog" className="hover:text-white transition-colors">Nook Journal</Link></li>
+                        <li><Link href="/blog" className="hover:text-white transition-colors">Nook Blog</Link></li>
                     </ul>
                 </div>
 

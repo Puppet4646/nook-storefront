@@ -1,5 +1,6 @@
-const { fetchProductBySlug } = require('./src/lib/woo');
-require('dotenv').config({ path: '.env.local' });
+import { fetchProductBySlug } from './src/lib/woo';
+import dotenv from 'dotenv';
+dotenv.config({ path: '.env.local' });
 
 async function test() {
     const slugs = ['te-organico-pu-erh-crudo', 'yunnan-2003-mature-pu-erh'];

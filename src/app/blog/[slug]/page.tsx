@@ -7,7 +7,7 @@ import { notFound } from "next/navigation";
 export async function generateStaticParams() {
     const posts = await fetchPosts();
     // Retornamos el array de params para next
-    return posts.map((post: any) => ({
+    return posts.map((post: { slug: string }) => ({
         slug: post.slug,
     }));
 }
@@ -47,7 +47,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                 {/* Header del Artículo */}
                 <header className="mb-12 text-center">
                     <p className="text-zen-sage uppercase tracking-widest text-[10px] font-semibold mb-6">
-                        {date} — Nook Journal
+                        {date} — Nook Blog
                     </p>
                     <h1
                         className="font-serif text-3xl md:text-5xl lg:text-6xl text-zen-dark leading-[1.1] mb-8"
@@ -57,7 +57,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
                 {/* Imagen Destacada Ancha */}
                 {imageUrl && (
-                    <div className="w-full relative aspect-[16/9] md:aspect-[21/9] rounded-md overflow-hidden mb-16 shadow-sm border border-zen-sage/10">
+                    <div className="w-full relative aspect-video md:aspect-21/9 rounded-md overflow-hidden mb-16 shadow-sm border border-zen-sage/10">
                         <Image
                             src={imageUrl}
                             alt={post.title.rendered}
@@ -86,10 +86,10 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                 {/* Footer del Artículo */}
                 <footer className="mt-20 pt-10 border-t border-zen-sage/20 text-center flex flex-col items-center">
                     <p className="text-sm font-sans text-zen-sage mb-6 italic">
-                        "La belleza de las cosas sencillas."
+                        &quot;La belleza de las cosas sencillas.&quot;
                     </p>
                     <Link href="/blog" className="inline-block border border-zen-dark text-zen-dark px-8 py-3 text-xs uppercase tracking-widest font-semibold hover:bg-zen-dark hover:text-white transition-colors">
-                        Volver al Journal
+                        Volver al Blog
                     </Link>
                 </footer>
             </article>

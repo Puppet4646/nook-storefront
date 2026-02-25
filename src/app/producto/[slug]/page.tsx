@@ -1,24 +1,31 @@
-import { fetchProductBySlug, fetchProducts } from "@/lib/woo";
+import { fetchProductBySlug, fetchProducts, type WooProduct } from "@/lib/woo";
 import { notFound } from "next/navigation";
 import AddToCartButton from "@/components/AddToCartButton";
 import ProductGallery from "@/components/ProductGallery";
 import ProductGrid from "@/components/ProductGrid";
 import Link from "next/link";
+import Image from "next/image";
 
 export const revalidate = 60;
 
 export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const products = await fetchProductBySlug(slug);
+    const rawProducts = await fetchProductBySlug(slug);
 
-    if (!products || products.length === 0) {
+    if (!rawProducts || rawProducts.length === 0) {
         return notFound();
     }
 
-    const product = products[0];
+    let product = rawProducts[0];
+    if (product.slug === 'filtro-de-tela-tradicional') {
+        product = {
+            ...product,
+            images: [{ id: 99999, src: '/images/filtro-tela.jpg', alt: 'Filtro de Tela Tradicional' }]
+        };
+    }
 
     // Helper to get attribute values safely
-    const getAttr = (name: string) => product.attributes?.find((a: { name: string; options?: string[] }) => a.name === name)?.options?.[0] || "";
+    const getAttr = (name: string) => product.attributes?.find((a) => a.name === name)?.options?.[0] || "";
 
     const tastingNotes = getAttr("Notas de Cata");
     const prepTemp = getAttr("Temperatura");
@@ -26,12 +33,12 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
     const prepIntensity = getAttr("Intensidad");
 
     // Related products (same category)
-    let relatedProducts: { id: number; slug: string; name: string; price: string; permalink: string; images: { id: number; src: string; alt: string }[] }[] = [];
+    let relatedProducts: WooProduct[] = [];
     if (product.categories && product.categories.length > 0) {
         const categoryId = product.categories[0].id;
         const allCategoryProducts = await fetchProducts(categoryId);
         relatedProducts = allCategoryProducts
-            .filter((p: { id: number }) => p.id !== product.id)
+            .filter((p) => p.id !== product.id)
             .slice(0, 4);
     }
 
@@ -117,10 +124,12 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                     </div>
                     <div className="order-1 lg:order-2 aspect-4/5 relative bg-zen-bone">
                         {product.images?.[1] && (
-                            <img
+                            <Image
                                 src={product.images[1].src}
                                 alt="Ambiental detail"
-                                className="w-full h-full object-cover grayscale-20 sepia-10 hover:grayscale-0 transition-all duration-1000"
+                                fill
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                                className="object-cover grayscale-20 sepia-10 hover:grayscale-0 transition-all duration-1000"
                             />
                         )}
                     </div>

@@ -9,7 +9,13 @@ import ProductImage from '@/components/ProductImage';
 import Link from 'next/link';
 
 export default async function Home() {
-  const products = await fetchProducts();
+  const originalProducts = await fetchProducts();
+  const products = originalProducts.map(p => {
+      if (p.slug === 'filtro-de-tela-tradicional') {
+          return { ...p, images: [{ id: 99999, src: '/images/filtro-tela.jpg', alt: 'Filtro de Tela Tradicional' }] };
+      }
+      return p;
+  });
   const blogPosts = await fetchPosts();
   const latestPosts = blogPosts.slice(0, 3);
 
@@ -31,11 +37,11 @@ export default async function Home() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-12">
-          {products.slice(0, 3).map((p: { id: number; slug: string; name: string; short_description?: string; categories?: { name: string }[]; images?: { src: string }[]; price?: string; price_html?: string }) => {
+          {products.slice(0, 3).map((p) => {
             const shortDesc = p.short_description
               ? p.short_description.replace(/<[^>]+>/g, '').slice(0, 100)
               : '';
-            const categories = p.categories?.map((c: { name: string }) => c.name) || [];
+            const categories = p.categories?.map((c) => c.name) || [];
 
             return (
               <Link key={p.id} href={`/producto/${p.slug}`} className="group cursor-pointer block">
@@ -95,7 +101,7 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="text-center mb-10 md:mb-16">
             <span className="font-sans text-[10px] uppercase tracking-[0.3em] text-zen-sage mb-2 block">Lectura &amp; Cultura</span>
-            <h2 className="font-serif text-3xl md:text-4xl text-zen-dark">Nook Journal</h2>
+            <h2 className="font-serif text-3xl md:text-4xl text-zen-dark">Últimas entradas</h2>
             <div className="w-12 h-px bg-zen-sage/30 mx-auto mt-6"></div>
           </div>
 
@@ -129,7 +135,7 @@ export default async function Home() {
           </div>
 
           <div className="mt-10 md:mt-16 text-center">
-            <Link href="/blog" className="inline-block font-sans text-[10px] uppercase tracking-[0.2em] text-zen-sage hover:text-zen-dark transition-all border border-zen-sage/30 px-8 py-4 hover:bg-zen-sage/5">Explorar Journal</Link>
+            <Link href="/blog" className="inline-block font-sans text-[10px] uppercase tracking-[0.2em] text-zen-sage hover:text-zen-dark transition-all border border-zen-sage/30 px-8 py-4 hover:bg-zen-sage/5">Explorar Blog</Link>
           </div>
         </div>
       </section>

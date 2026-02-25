@@ -1,27 +1,8 @@
-import { fetchProducts, fetchCategories } from "@/lib/woo";
+import { fetchProducts, fetchCategories, type WooCategory, type WooProduct } from "@/lib/woo";
 import ProductGrid from "@/components/ProductGrid";
 import CategoryFilter from "@/components/CategoryFilter";
 
 export const revalidate = 60; // Revalidate cache every 60 seconds
-
-interface WooCategory {
-    id: number;
-    name: string;
-    slug: string;
-    count: number;
-    parent: number;
-}
-
-interface WooProduct {
-    id: number;
-    name: string;
-    price: string;
-    date_created?: string;
-    images: { id: number; src: string; alt: string }[];
-    permalink: string;
-    slug: string;
-    categories?: { id: number; name: string; slug: string }[];
-}
 
 export default async function TiendaPage({
     searchParams,
@@ -51,28 +32,34 @@ export default async function TiendaPage({
         console.log("TIENDA DEBUG: Categories fetched count:", categoriesRes?.length || 0);
 
         // Filtramos categorías vacías solo si no estamos en modo desarrollo/inicial
-        categories = categoriesRes.filter((c: WooCategory) => c.slug !== 'uncategorized');
-        let baseProducts = productsRes || [];
+        categories = categoriesRes.filter((c) => c.slug !== 'uncategorized');
+        
+        let baseProducts = (productsRes || []).map(p => {
+            if (p.slug === 'filtro-de-tela-tradicional') {
+                return { ...p, images: [{ id: 99999, src: '/images/filtro-tela.jpg', alt: 'Filtro de Tela Tradicional' }] };
+            }
+            return p;
+        });
 
         // 3. Filtrar por Categoría manualmente (ya que la API a veces es lenta)
         if (categorySlug) {
             // Buscamos el ID de la categoría pedida en la URL
-            const requestedCat = categories.find((c: WooCategory) => c.slug === categorySlug);
+            const requestedCat = categories.find((c) => c.slug === categorySlug);
             if (requestedCat) {
                 // Filtramos el array base buscando si el producto tiene esa categoría
-                baseProducts = baseProducts.filter((p: WooProduct) =>
-                    p.categories && p.categories.some((cat: { id: number }) => cat.id === requestedCat.id)
+                baseProducts = baseProducts.filter((p) =>
+                    p.categories && p.categories.some((cat) => cat.id === requestedCat.id)
                 );
             }
         }
 
         // 4. Ordenación basada en el sort param
         if (sortParam === 'price_asc') {
-            baseProducts.sort((a: WooProduct, b: WooProduct) => parseFloat(a.price || '0') - parseFloat(b.price || '0'));
+            baseProducts.sort((a, b) => parseFloat(a.price || '0') - parseFloat(b.price || '0'));
         } else if (sortParam === 'price_desc') {
-            baseProducts.sort((a: WooProduct, b: WooProduct) => parseFloat(b.price || '0') - parseFloat(a.price || '0'));
+            baseProducts.sort((a, b) => parseFloat(b.price || '0') - parseFloat(a.price || '0'));
         } else if (sortParam === 'newest') {
-            baseProducts.sort((a: WooProduct, b: WooProduct) => {
+            baseProducts.sort((a, b) => {
                 const dateA = a.date_created ? new Date(a.date_created).getTime() : 0;
                 const dateB = b.date_created ? new Date(b.date_created).getTime() : 0;
                 return dateB - dateA;

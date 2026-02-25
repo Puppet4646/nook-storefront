@@ -36,7 +36,7 @@ export async function GET(request: NextRequest) {
             path,
             now: Date.now()
         });
-    } catch (err) {
+    } catch {
         return NextResponse.json({ message: 'Error revalidando' }, { status: 500 });
     }
 }
@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
     try {
         revalidatePath(path);
         return NextResponse.json({ revalidated: true, path });
-    } catch (err) {
+    } catch {
         return NextResponse.json({ message: 'Error revalidando' }, { status: 500 });
     }
 }

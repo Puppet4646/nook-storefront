@@ -1,7 +1,6 @@
-const WooCommerceRestApi = require("@woocommerce/woocommerce-rest-api").default;
-const dotenv = require("dotenv");
-const path = require("path");
-
+import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api";
+import dotenv from "dotenv";
+import path from "path";
 // Load .env.local
 dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
 

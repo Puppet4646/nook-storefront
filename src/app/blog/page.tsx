@@ -10,7 +10,7 @@ export default async function BlogPage() {
     return (
         <main className="min-h-screen bg-zen-bone pt-32 pb-16 px-6">
             <section className="max-w-4xl mx-auto text-center mb-16">
-                <h1 className="font-serif text-4xl md:text-5xl text-zen-dark mb-4">Nook Journal</h1>
+                <h1 className="font-serif text-4xl md:text-5xl text-zen-dark mb-4">Últimas entradas</h1>
                 <p className="text-zen-sage font-sans font-medium tracking-widest text-sm uppercase">
                     Cultura, Preparación y Entorno del Té
                 </p>
@@ -23,7 +23,7 @@ export default async function BlogPage() {
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {posts.map((post: any) => {
+                        {posts.map((post: { id: number; slug: string; date: string; title: { rendered: string }; excerpt: { rendered: string }; _embedded?: { 'wp:featuredmedia'?: { source_url: string }[] } }) => {
                             // Extraer media destacada embedida
                             const featuredMedia = post._embedded?.['wp:featuredmedia']?.[0];
 
@@ -46,7 +46,7 @@ export default async function BlogPage() {
 
                             return (
                                 <article key={post.id} className="group flex flex-col items-start">
-                                    <Link href={`/blog/${post.slug}`} className="w-full relative aspect-[4/3] mb-4 overflow-hidden rounded-md bg-zen-light/50">
+                                    <Link href={`/blog/${post.slug}`} className="w-full relative aspect-4/3 mb-4 overflow-hidden rounded-md bg-zen-light/50">
                                         <Image
                                             src={imageUrl}
                                             alt={post.title.rendered}

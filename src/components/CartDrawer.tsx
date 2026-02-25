@@ -11,6 +11,7 @@ export default function CartDrawer() {
 
     // Prevent hydration errors by only rendering on client
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setIsMounted(true);
     }, []);
 
@@ -27,7 +28,7 @@ export default function CartDrawer() {
 
             {/* Slide-out panel */}
             <div
-                className={`fixed inset-y-0 right-0 z-50 w-full md:w-[450px] bg-[#FAF9F6] shadow-2xl transform transition-transform duration-500 ease-in-out flex flex-col ${isOpen ? "translate-x-0" : "translate-x-full"
+                className={`fixed inset-y-0 right-0 z-50 w-full md:w-[450px] bg-zen-bone shadow-2xl transform transition-transform duration-500 ease-in-out flex flex-col ${isOpen ? "translate-x-0" : "translate-x-full"
                     }`}
             >
                 {/* Header */}
@@ -57,7 +58,7 @@ export default function CartDrawer() {
                         items.map((item) => (
                             <div key={item.id} className="flex gap-6 items-center group">
                                 {/* Product Image using new component */}
-                                <div className="relative w-24 h-28 bg-zen-sage/5 rounded-sm overflow-hidden flex-shrink-0 border border-zen-sage/10 group-hover:border-zen-sage/30 transition-colors">
+                                <div className="relative w-24 h-28 bg-zen-sage/5 rounded-sm overflow-hidden shrink-0 border border-zen-sage/10 group-hover:border-zen-sage/30 transition-colors">
                                     <ProductImage
                                         src={item.image}
                                         alt={item.name}
