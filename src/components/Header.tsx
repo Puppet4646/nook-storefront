@@ -20,7 +20,7 @@ export default function Header() {
 
     return (
         <>
-            <header className="fixed top-0 left-0 right-0 z-50 bg-[#FAF9F6]/90 backdrop-blur-md border-b border-zen-sage/10 transition-all duration-300">
+            <header className="fixed top-9 left-0 right-0 z-50 bg-[#FAF9F6]/90 backdrop-blur-md border-b border-zen-sage/10 transition-all duration-300">
                 <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
 
                     {/* Mobile Menu Toggle */}
@@ -82,7 +82,7 @@ export default function Header() {
 
             {/* Slide-in Panel */}
             <nav
-                className={`fixed top-16 left-0 bottom-0 w-4/5 max-w-xs bg-[#FAF9F6] z-40 md:hidden transform transition-transform duration-300 ease-out shadow-2xl ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
+                className={`fixed top-[100px] left-0 bottom-0 w-4/5 max-w-xs bg-[#FAF9F6] z-40 md:hidden transform transition-transform duration-300 ease-out shadow-2xl ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
                 aria-hidden={!isMenuOpen}
             >
                 <div className="flex flex-col h-full pt-8 pb-12 px-8">
