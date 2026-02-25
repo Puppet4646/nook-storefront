@@ -22,7 +22,7 @@ export default function FeaturedCategories() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-10">
 
                     {/* Category Card 1: Té Matcha */}
-                    <div className="group relative overflow-hidden rounded-sm bg-white shadow-sm transition-all duration-500 hover:shadow-xl aspect-[4/5] md:aspect-[3/4]">
+                    <div className="group relative overflow-hidden rounded-sm bg-white shadow-sm transition-all duration-500 hover:shadow-xl aspect-4/5 md:aspect-3/4">
                         <Image
                             alt="Premium Japanese Matcha Tea Powder"
                             className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -31,7 +31,7 @@ export default function FeaturedCategories() {
                             sizes="(max-width: 768px) 100vw, 33vw"
                         />
                         {/* Gradient Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent"></div>
 
                         {/* Card Content */}
                         <div className="absolute bottom-0 left-0 right-0 p-8 flex flex-col items-center justify-end">
@@ -44,7 +44,7 @@ export default function FeaturedCategories() {
                     </div>
 
                     {/* Category Card 2: Té Negro */}
-                    <div className="group relative overflow-hidden rounded-sm bg-white shadow-sm transition-all duration-500 hover:shadow-xl aspect-[4/5] md:aspect-[3/4]">
+                    <div className="group relative overflow-hidden rounded-sm bg-white shadow-sm transition-all duration-500 hover:shadow-xl aspect-4/5 md:aspect-3/4">
                         <Image
                             alt="Artisanal Black Tea Leaves"
                             className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -52,7 +52,7 @@ export default function FeaturedCategories() {
                             fill
                             sizes="(max-width: 768px) 100vw, 33vw"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent"></div>
 
                         <div className="absolute bottom-0 left-0 right-0 p-8 flex flex-col items-center justify-end">
                             <h3 className="text-white text-sm font-sans font-medium uppercase tracking-[0.15em] transition-all duration-300 group-hover:tracking-[0.25em]">
@@ -64,7 +64,7 @@ export default function FeaturedCategories() {
                     </div>
 
                     {/* Category Card 3: Café de Especialidad */}
-                    <div className="group relative overflow-hidden rounded-sm bg-white shadow-sm transition-all duration-500 hover:shadow-xl aspect-[4/5] md:aspect-[3/4]">
+                    <div className="group relative overflow-hidden rounded-sm bg-white shadow-sm transition-all duration-500 hover:shadow-xl aspect-4/5 md:aspect-3/4">
                         <Image
                             alt="Roasted Specialty Coffee Beans"
                             className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -72,7 +72,7 @@ export default function FeaturedCategories() {
                             fill
                             sizes="(max-width: 768px) 100vw, 33vw"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent"></div>
 
                         <div className="absolute bottom-0 left-0 right-0 p-8 flex flex-col items-center justify-end">
                             <h3 className="text-white text-sm font-sans font-medium uppercase tracking-[0.15em] transition-all duration-300 group-hover:tracking-[0.25em] text-center">

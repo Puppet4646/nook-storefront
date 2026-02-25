@@ -29,11 +29,11 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-[#FAF9F6] text-[#2C352D] flex flex-col min-h-screen pt-[100px] md:pt-[116px]`}
+        className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-zen-bone text-zen-dark flex flex-col min-h-screen pt-[100px] md:pt-[116px]`}
       >
         <AnnouncementBar />
         <Header />
-        <div className="flex-grow">
+        <div className="grow">
           {children}
         </div>
         <CartDrawer />

@@ -22,7 +22,7 @@ export default function Storytelling() {
 
                 {/* Right Side: Asymmetric Editorial Image */}
                 <div className="relative order-1 md:order-2 w-full flex justify-center md:justify-end">
-                    <div className="relative aspect-[3/4] w-full max-w-sm lg:max-w-md rounded-sm overflow-hidden shadow-2xl transform md:translate-x-8 md:translate-y-12">
+                    <div className="relative aspect-3/4 w-full max-w-sm lg:max-w-md rounded-sm overflow-hidden shadow-2xl transform md:translate-x-8 md:translate-y-12">
                         <Image
                             src="/images/storytelling-hands.jpg"
                             alt="Preparación tradicional matcha té ceremonia zen"
@@ -32,7 +32,7 @@ export default function Storytelling() {
                         />
                     </div>
                     {/* Decorative Element: Overflowing offset border */}
-                    <div className="absolute top-4 right-4 md:top-8 md:-right-8 w-full max-w-sm lg:max-w-md aspect-[3/4] border border-zen-bone/30 rounded-sm -z-10 pointer-events-none transform md:translate-x-8 md:translate-y-12"></div>
+                    <div className="absolute top-4 right-4 md:top-8 md:-right-8 w-full max-w-sm lg:max-w-md aspect-3/4 border border-zen-bone/30 rounded-sm -z-10 pointer-events-none transform md:translate-x-8 md:translate-y-12"></div>
                 </div>
             </div>
         </section>

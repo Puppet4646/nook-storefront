@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
     return (
         <footer className="bg-zen-dark text-zen-bone px-4 md:px-6 pt-16 md:pt-24 pb-10 md:pb-12 w-full mt-10 md:mt-16">
@@ -25,21 +27,21 @@ export default function Footer() {
 
                 {/* Navigation Column */}
                 <div>
-                    <h3 className="uppercase font-sans font-semibold text-xs tracking-widest text-[#8C9A7B] mb-6">Explorar</h3>
+                    <h3 className="uppercase font-sans font-semibold text-xs tracking-widest text-zen-sage mb-6">Explorar</h3>
                     <ul className="flex flex-col gap-4 font-sans font-light text-sm text-zen-bone/80">
-                        <li><a href="/tienda" className="hover:text-white transition-colors">Tienda</a></li>
-                        <li><a href="/nosotros" className="hover:text-white transition-colors">Nuestra Filosofía</a></li>
-                        <li><a href="/blog" className="hover:text-white transition-colors">Nook Journal</a></li>
+                        <li><Link href="/tienda" className="hover:text-white transition-colors">Tienda</Link></li>
+                        <li><Link href="/nosotros" className="hover:text-white transition-colors">Nuestra Filosofía</Link></li>
+                        <li><Link href="/blog" className="hover:text-white transition-colors">Nook Journal</Link></li>
                     </ul>
                 </div>
 
                 {/* Contact/Legal Column */}
                 <div>
-                    <h3 className="uppercase font-sans font-semibold text-xs tracking-widest text-[#8C9A7B] mb-6">Asistencia</h3>
+                    <h3 className="uppercase font-sans font-semibold text-xs tracking-widest text-zen-sage mb-6">Asistencia</h3>
                     <ul className="flex flex-col gap-4 font-sans font-light text-sm text-zen-bone/80">
-                        <li><a href="/legal/envios" className="hover:text-white transition-colors">Envíos y Devoluciones</a></li>
-                        <li><a href="/faq" className="hover:text-white transition-colors">FAQ</a></li>
-                        <li><a href="/contacto" className="hover:text-white transition-colors">Contacto</a></li>
+                        <li><Link href="/legal/envios" className="hover:text-white transition-colors">Envíos y Devoluciones</Link></li>
+                        <li><Link href="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
+                        <li><Link href="/contacto" className="hover:text-white transition-colors">Contacto</Link></li>
                     </ul>
                 </div>
 
@@ -49,9 +51,9 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto pt-8 border-t border-zen-sage/30 flex flex-col md:flex-row items-center justify-between gap-6 text-xs font-sans font-light text-zen-sage">
                 <p>&copy; {new Date().getFullYear()} Nook Specialy Tea. Todos los derechos reservados.</p>
                 <div className="flex flex-wrap justify-center gap-6">
-                    <a href="/legal/aviso-legal" className="hover:text-white transition-colors">Aviso Legal</a>
-                    <a href="/legal/privacidad" className="hover:text-white transition-colors">Privacidad</a>
-                    <a href="#" className="hover:text-white transition-colors">Cookies</a>
+                    <Link href="/legal/aviso-legal" className="hover:text-white transition-colors">Aviso Legal</Link>
+                    <Link href="/legal/privacidad" className="hover:text-white transition-colors">Privacidad</Link>
+                    <Link href="#" className="hover:text-white transition-colors">Cookies</Link>
                 </div>
             </div>
         </footer>

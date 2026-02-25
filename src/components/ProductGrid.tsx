@@ -16,7 +16,7 @@ interface WooCommerceProduct {
 
 // Internal component to handle individual product images with fallback
 function ProductImage({ src, alt }: { src: string; alt: string }) {
-    const [imgSrc, setImgSrc] = useState(src);
+    const [imgSrc] = useState(src);
     const [hasError, setHasError] = useState(false);
 
     // Reliable fallback: A nice nature/tea related image from Picsum
@@ -53,7 +53,7 @@ export default function ProductGrid({ products }: { products: WooCommerceProduct
 
                 return (
                     <div key={product.id} className="group flex flex-col gap-4">
-                        <Link href={`/producto/${product.slug}`} className="relative aspect-[3/4] overflow-hidden bg-zen-bone/40 block border border-zen-sage/5">
+                        <Link href={`/producto/${product.slug}`} className="relative aspect-3/4 overflow-hidden bg-zen-bone/40 block border border-zen-sage/5">
                             <ProductImage src={initialImageUrl} alt={product.name} />
 
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />

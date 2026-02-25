@@ -55,7 +55,7 @@ function AccordionItem({ question, answer }: { question: string, answer: string 
 
 export default function FAQPage() {
     return (
-        <div className="bg-[#FAF9F6] min-h-screen">
+        <div className="bg-zen-bone min-h-screen">
             <Header />
 
             <main className="pt-32 pb-24">

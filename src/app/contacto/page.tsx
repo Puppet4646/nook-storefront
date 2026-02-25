@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 
 export default function ContactoPage() {
     return (
-        <div className="bg-[#FAF9F6] min-h-screen">
+        <div className="bg-zen-bone min-h-screen">
             <Header />
 
             <main className="pt-32 pb-24">

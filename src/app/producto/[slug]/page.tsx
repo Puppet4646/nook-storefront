@@ -18,7 +18,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
     const product = products[0];
 
     // Helper to get attribute values safely
-    const getAttr = (name: string) => product.attributes?.find((a: any) => a.name === name)?.options?.[0] || "";
+    const getAttr = (name: string) => product.attributes?.find((a: { name: string; options?: string[] }) => a.name === name)?.options?.[0] || "";
 
     const tastingNotes = getAttr("Notas de Cata");
     const prepTemp = getAttr("Temperatura");
@@ -26,12 +26,12 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
     const prepIntensity = getAttr("Intensidad");
 
     // Related products (same category)
-    let relatedProducts: any[] = [];
+    let relatedProducts: { id: number; slug: string; name: string; price: string; permalink: string; images: { id: number; src: string; alt: string }[] }[] = [];
     if (product.categories && product.categories.length > 0) {
         const categoryId = product.categories[0].id;
         const allCategoryProducts = await fetchProducts(categoryId);
         relatedProducts = allCategoryProducts
-            .filter((p: any) => p.id !== product.id)
+            .filter((p: { id: number }) => p.id !== product.id)
             .slice(0, 4);
     }
 
@@ -115,12 +115,12 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                             Descubre la colección completa
                         </Link>
                     </div>
-                    <div className="order-1 lg:order-2 aspect-[4/5] relative bg-zen-bone">
+                    <div className="order-1 lg:order-2 aspect-4/5 relative bg-zen-bone">
                         {product.images?.[1] && (
                             <img
                                 src={product.images[1].src}
                                 alt="Ambiental detail"
-                                className="w-full h-full object-cover grayscale-[20%] sepia-[10%] hover:grayscale-0 transition-all duration-1000"
+                                className="w-full h-full object-cover grayscale-20 sepia-10 hover:grayscale-0 transition-all duration-1000"
                             />
                         )}
                     </div>

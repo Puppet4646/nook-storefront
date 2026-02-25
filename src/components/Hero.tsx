@@ -94,7 +94,7 @@ export default function Hero() {
                         className="object-cover"
                         sizes="100vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/20 md:from-black/80 md:via-black/50 md:to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-r from-black/85 via-black/60 to-black/20 md:from-black/80 md:via-black/50 md:to-transparent" />
                 </div>
             ))}
 
@@ -113,7 +113,7 @@ export default function Hero() {
                             {i === current && (
                                 <>
                                     <div className="flex items-center gap-4 mb-6">
-                                        <div className="h-[1px] w-12 bg-zen-sage" />
+                                        <div className="h-px w-12 bg-zen-sage" />
                                         <p className="font-sans text-[10px] md:text-sm font-medium tracking-[0.3em] text-zen-sage-light uppercase">
                                             {slide.kicker}
                                         </p>

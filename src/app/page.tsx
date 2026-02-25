@@ -31,11 +31,11 @@ export default async function Home() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-12">
-          {products.slice(0, 3).map((p: any) => {
+          {products.slice(0, 3).map((p: { id: number; slug: string; name: string; short_description?: string; categories?: { name: string }[]; images?: { src: string }[]; price?: string; price_html?: string }) => {
             const shortDesc = p.short_description
               ? p.short_description.replace(/<[^>]+>/g, '').slice(0, 100)
               : '';
-            const categories = p.categories?.map((c: any) => c.name) || [];
+            const categories = p.categories?.map((c: { name: string }) => c.name) || [];
 
             return (
               <Link key={p.id} href={`/producto/${p.slug}`} className="group cursor-pointer block">
@@ -73,7 +73,7 @@ export default async function Home() {
                   </p>
                 )}
 
-                <div className="font-sans text-xs text-zen-sage tracking-widest uppercase font-medium" dangerouslySetInnerHTML={{ __html: p.price_html }} />
+                <div className="font-sans text-xs text-zen-sage tracking-widest uppercase font-medium" dangerouslySetInnerHTML={{ __html: p.price_html || '' }} />
               </Link>
             );
           })}
@@ -91,16 +91,16 @@ export default async function Home() {
       <NewsletterBanner />
 
       {/* Journal / Blog Preview Section */}
-      <section className="bg-[#FAF9F6] py-16 md:py-24 border-y border-zen-sage/10">
+      <section className="bg-zen-bone py-16 md:py-24 border-y border-zen-sage/10">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="text-center mb-10 md:mb-16">
             <span className="font-sans text-[10px] uppercase tracking-[0.3em] text-zen-sage mb-2 block">Lectura &amp; Cultura</span>
             <h2 className="font-serif text-3xl md:text-4xl text-zen-dark">Nook Journal</h2>
-            <div className="w-12 h-[1px] bg-zen-sage/30 mx-auto mt-6"></div>
+            <div className="w-12 h-px bg-zen-sage/30 mx-auto mt-6"></div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-12">
-            {latestPosts.map((post: any) => {
+            {latestPosts.map((post: { id: number; slug: string; title: { rendered: string }; excerpt?: { rendered: string }; _embedded?: { 'wp:featuredmedia'?: { source_url: string }[] } }) => {
               const title = post.title.rendered.toLowerCase();
               let imageUrl = post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
 
@@ -118,11 +118,11 @@ export default async function Home() {
                       src={imageUrl}
                       alt={post.title.rendered}
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105 grayscale-[20%] group-hover:grayscale-0"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105 grayscale-20 group-hover:grayscale-0"
                     />
                   </div>
                   <h3 className="font-serif text-xl text-zen-dark mb-3 leading-snug group-hover:text-zen-sage transition-colors" dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-                  <p className="font-sans text-xs text-zen-sage/80 line-clamp-2 uppercase tracking-tight leading-loose" dangerouslySetInnerHTML={{ __html: post.excerpt.rendered.replace(/<[^>]+>/g, '') }} />
+                  <p className="font-sans text-xs text-zen-sage/80 line-clamp-2 uppercase tracking-tight leading-loose" dangerouslySetInnerHTML={{ __html: post.excerpt?.rendered?.replace(/<[^>]+>/g, '') || '' }} />
                 </Link>
               );
             })}

@@ -4,6 +4,25 @@ import CategoryFilter from "@/components/CategoryFilter";
 
 export const revalidate = 60; // Revalidate cache every 60 seconds
 
+interface WooCategory {
+    id: number;
+    name: string;
+    slug: string;
+    count: number;
+    parent: number;
+}
+
+interface WooProduct {
+    id: number;
+    name: string;
+    price: string;
+    date_created?: string;
+    images: { id: number; src: string; alt: string }[];
+    permalink: string;
+    slug: string;
+    categories?: { id: number; name: string; slug: string }[];
+}
+
 export default async function TiendaPage({
     searchParams,
 }: {
@@ -18,8 +37,8 @@ export default async function TiendaPage({
     // y aplicaremos la ordenación JS básica antes de pasar al renderizado.
     const sortParam = typeof searchParams.orden === 'string' ? searchParams.orden : 'default';
 
-    let products: { id: number; name: string; price: string; date_created?: string; images: { id: number; src: string; alt: string }[]; permalink: string; slug: string; }[] = [];
-    let categories: any[] = [];
+    let products: WooProduct[] = [];
+    let categories: WooCategory[] = [];
 
     // 2. Fetch de datos en paralelo (Categorías y Listado Global)
     try {
@@ -32,28 +51,28 @@ export default async function TiendaPage({
         console.log("TIENDA DEBUG: Categories fetched count:", categoriesRes?.length || 0);
 
         // Filtramos categorías vacías solo si no estamos en modo desarrollo/inicial
-        categories = categoriesRes.filter((c: any) => c.slug !== 'uncategorized');
+        categories = categoriesRes.filter((c: WooCategory) => c.slug !== 'uncategorized');
         let baseProducts = productsRes || [];
 
         // 3. Filtrar por Categoría manualmente (ya que la API a veces es lenta)
         if (categorySlug) {
             // Buscamos el ID de la categoría pedida en la URL
-            const requestedCat = categories.find((c: any) => c.slug === categorySlug);
+            const requestedCat = categories.find((c: WooCategory) => c.slug === categorySlug);
             if (requestedCat) {
                 // Filtramos el array base buscando si el producto tiene esa categoría
-                baseProducts = baseProducts.filter((p: any) =>
-                    p.categories && p.categories.some((cat: any) => cat.id === requestedCat.id)
+                baseProducts = baseProducts.filter((p: WooProduct) =>
+                    p.categories && p.categories.some((cat: { id: number }) => cat.id === requestedCat.id)
                 );
             }
         }
 
         // 4. Ordenación basada en el sort param
         if (sortParam === 'price_asc') {
-            baseProducts.sort((a: any, b: any) => parseFloat(a.price || '0') - parseFloat(b.price || '0'));
+            baseProducts.sort((a: WooProduct, b: WooProduct) => parseFloat(a.price || '0') - parseFloat(b.price || '0'));
         } else if (sortParam === 'price_desc') {
-            baseProducts.sort((a: any, b: any) => parseFloat(b.price || '0') - parseFloat(a.price || '0'));
+            baseProducts.sort((a: WooProduct, b: WooProduct) => parseFloat(b.price || '0') - parseFloat(a.price || '0'));
         } else if (sortParam === 'newest') {
-            baseProducts.sort((a: any, b: any) => {
+            baseProducts.sort((a: WooProduct, b: WooProduct) => {
                 const dateA = a.date_created ? new Date(a.date_created).getTime() : 0;
                 const dateB = b.date_created ? new Date(b.date_created).getTime() : 0;
                 return dateB - dateA;
@@ -82,7 +101,7 @@ export default async function TiendaPage({
                 <div className="flex flex-col md:flex-row gap-8 items-start">
 
                     {/* Sidebar Categorías (25% ancho en Desktop) */}
-                    <aside className="w-full md:w-1/4 flex-shrink-0 sticky top-24">
+                    <aside className="w-full md:w-1/4 shrink-0 sticky top-24">
                         <CategoryFilter categories={categories} />
                     </aside>
 
