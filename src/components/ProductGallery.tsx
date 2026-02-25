@@ -47,7 +47,7 @@ export default function ProductGallery({ images }: { images: ImageProps[] }) {
                     <button
                         key={img.id}
                         onClick={() => setSelectedImage(idx)}
-                        className={`relative aspect-[3/4] w-full border transition-all duration-300 ${selectedImage === idx ? 'border-zen-dark opacity-100' : 'border-transparent opacity-40 hover:opacity-100'
+                        className={`relative aspect-3/4 w-full border transition-all duration-300 ${selectedImage === idx ? 'border-zen-dark opacity-100' : 'border-transparent opacity-40 hover:opacity-100'
                             }`}
                     >
                         <Image
@@ -122,7 +122,7 @@ export default function ProductGallery({ images }: { images: ImageProps[] }) {
                     <button
                         key={img.id}
                         onClick={() => setSelectedImage(idx)}
-                        className={`relative flex-shrink-0 w-14 h-14 border transition-all duration-200 ${selectedImage === idx ? 'border-zen-dark opacity-100' : 'border-zen-sage/20 opacity-50'
+                        className={`relative shrink-0 w-14 h-14 border transition-all duration-200 ${selectedImage === idx ? 'border-zen-dark opacity-100' : 'border-zen-sage/20 opacity-50'
                             }`}
                     >
                         <Image
