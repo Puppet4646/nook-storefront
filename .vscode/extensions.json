@@ -5,7 +5,10 @@
         "esbenp.prettier-vscode",
         "usernamehw.errorlens",
         "dsznajder.es7-react-js-snippets",
-        "rangav.vscode-thunder-client",
-        "eamodio.gitlens"
+        "eamodio.gitlens",
+        "GraphQL.vscode-graphql",
+        "GraphQL.vscode-graphql-syntax",
+        "formulahendry.auto-rename-tag",
+        "yoavbls.pretty-ts-errors"
     ]
 }

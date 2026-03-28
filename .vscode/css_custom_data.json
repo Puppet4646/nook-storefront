@@ -1,0 +1,49 @@
+{
+  "version": 1.1,
+  "atDirectives": [
+    {
+      "name": "@tailwind",
+      "description": "Insert Tailwind styles."
+    },
+    {
+      "name": "@apply",
+      "description": "Inline utility classes."
+    },
+    {
+      "name": "@layer",
+      "description": "Group custom styles."
+    },
+    {
+      "name": "@theme",
+      "description": "Define Tailwind v4 theme variables."
+    },
+    {
+      "name": "@config",
+      "description": "Load a configuration file."
+    },
+    {
+      "name": "@plugin",
+      "description": "Load a plugin."
+    },
+    {
+      "name": "@source",
+      "description": "Specify source files."
+    },
+    {
+      "name": "@utility",
+      "description": "Define custom utilities."
+    },
+    {
+      "name": "@variant",
+      "description": "Define custom variants."
+    },
+    {
+      "name": "@custom-variant",
+      "description": "Define custom variants."
+    },
+    {
+      "name": "@reference",
+      "description": "Reference Tailwind styles without outputting them."
+    }
+  ]
+}

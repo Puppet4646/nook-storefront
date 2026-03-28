@@ -1,6 +1,5 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const WooCommerceRestApi = require("@woocommerce/woocommerce-rest-api").default;
-const fs = require('fs');
-const path = require('path');
 require('dotenv').config({ path: '.env.local' });
 
 const api = new WooCommerceRestApi({
